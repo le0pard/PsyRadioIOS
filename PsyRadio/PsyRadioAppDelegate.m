@@ -37,8 +37,8 @@
     [self.window makeKeyAndVisible];
     
     // radio
-    radio = [[Radio alloc] init];
-	[radio connect:@"http://stream.psyradio.com.ua:8000/64kbps" withDelegate:self withGain:(0.5)];
+    self.radio = [[Radio alloc] init];
+	[self.radio connect:@"http://stream.psyradio.com.ua:8000/64kbps" withDelegate:self withGain:(0.5)];
     
     return YES;
 }
