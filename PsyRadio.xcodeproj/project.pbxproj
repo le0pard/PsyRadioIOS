@@ -21,6 +21,10 @@
 		B3FDA15C14BF09AA0011E709 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13A14BF09A90011E709 /* Foundation.framework */; };
 		B3FDA16414BF09AA0011E709 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3FDA16214BF09AA0011E709 /* InfoPlist.strings */; };
 		B3FDA16714BF09AA0011E709 /* PsyRadioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FDA16614BF09AA0011E709 /* PsyRadioTests.m */; };
+		B3FDA17114BF09D40011E709 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA17014BF09D40011E709 /* AudioToolbox.framework */; };
+		B3FDA17914BF0A080011E709 /* Packet.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FDA17414BF0A080011E709 /* Packet.m */; };
+		B3FDA17A14BF0A080011E709 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FDA17614BF0A080011E709 /* Queue.m */; };
+		B3FDA17B14BF0A080011E709 /* Radio.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FDA17814BF0A080011E709 /* Radio.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,22 +42,29 @@
 		B3FDA13814BF09A90011E709 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3FDA13A14BF09A90011E709 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3FDA13C14BF09A90011E709 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B3FDA14014BF09AA0011E709 /* PsyRadio-Info.plist */ = {isa = PBXFileReference; path = "PsyRadio-Info.plist"; sourceTree = "<group>"; };
+		B3FDA14014BF09AA0011E709 /* PsyRadio-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PsyRadio-Info.plist"; sourceTree = "<group>"; };
 		B3FDA14214BF09AA0011E709 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3FDA14414BF09AA0011E709 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B3FDA14614BF09AA0011E709 /* PsyRadio-Prefix.pch */ = {isa = PBXFileReference; path = "PsyRadio-Prefix.pch"; sourceTree = "<group>"; };
-		B3FDA14714BF09AA0011E709 /* PsyRadioAppDelegate.h */ = {isa = PBXFileReference; path = PsyRadioAppDelegate.h; sourceTree = "<group>"; };
+		B3FDA14614BF09AA0011E709 /* PsyRadio-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PsyRadio-Prefix.pch"; sourceTree = "<group>"; };
+		B3FDA14714BF09AA0011E709 /* PsyRadioAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PsyRadioAppDelegate.h; sourceTree = "<group>"; };
 		B3FDA14814BF09AA0011E709 /* PsyRadioAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PsyRadioAppDelegate.m; sourceTree = "<group>"; };
-		B3FDA14A14BF09AA0011E709 /* PsyRadioViewController.h */ = {isa = PBXFileReference; path = PsyRadioViewController.h; sourceTree = "<group>"; };
+		B3FDA14A14BF09AA0011E709 /* PsyRadioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PsyRadioViewController.h; sourceTree = "<group>"; };
 		B3FDA14B14BF09AA0011E709 /* PsyRadioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PsyRadioViewController.m; sourceTree = "<group>"; };
 		B3FDA14E14BF09AA0011E709 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PsyRadioViewController_iPhone.xib; sourceTree = "<group>"; };
 		B3FDA15114BF09AA0011E709 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PsyRadioViewController_iPad.xib; sourceTree = "<group>"; };
 		B3FDA15814BF09AA0011E709 /* PsyRadioTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PsyRadioTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FDA15914BF09AA0011E709 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		B3FDA16114BF09AA0011E709 /* PsyRadioTests-Info.plist */ = {isa = PBXFileReference; path = "PsyRadioTests-Info.plist"; sourceTree = "<group>"; };
+		B3FDA16114BF09AA0011E709 /* PsyRadioTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PsyRadioTests-Info.plist"; sourceTree = "<group>"; };
 		B3FDA16314BF09AA0011E709 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B3FDA16514BF09AA0011E709 /* PsyRadioTests.h */ = {isa = PBXFileReference; path = PsyRadioTests.h; sourceTree = "<group>"; };
+		B3FDA16514BF09AA0011E709 /* PsyRadioTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PsyRadioTests.h; sourceTree = "<group>"; };
 		B3FDA16614BF09AA0011E709 /* PsyRadioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PsyRadioTests.m; sourceTree = "<group>"; };
+		B3FDA17014BF09D40011E709 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B3FDA17314BF0A080011E709 /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Packet.h; sourceTree = "<group>"; };
+		B3FDA17414BF0A080011E709 /* Packet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Packet.m; sourceTree = "<group>"; };
+		B3FDA17514BF0A080011E709 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		B3FDA17614BF0A080011E709 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
+		B3FDA17714BF0A080011E709 /* Radio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Radio.h; sourceTree = "<group>"; };
+		B3FDA17814BF0A080011E709 /* Radio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Radio.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3FDA17114BF09D40011E709 /* AudioToolbox.framework in Frameworks */,
 				B3FDA13914BF09A90011E709 /* UIKit.framework in Frameworks */,
 				B3FDA13B14BF09A90011E709 /* Foundation.framework in Frameworks */,
 				B3FDA13D14BF09A90011E709 /* CoreGraphics.framework in Frameworks */,
@@ -102,6 +114,7 @@
 		B3FDA13714BF09A90011E709 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3FDA17014BF09D40011E709 /* AudioToolbox.framework */,
 				B3FDA13814BF09A90011E709 /* UIKit.framework */,
 				B3FDA13A14BF09A90011E709 /* Foundation.framework */,
 				B3FDA13C14BF09A90011E709 /* CoreGraphics.framework */,
@@ -113,6 +126,7 @@
 		B3FDA13E14BF09AA0011E709 /* PsyRadio */ = {
 			isa = PBXGroup;
 			children = (
+				B3FDA17214BF0A080011E709 /* Radio */,
 				B3FDA14714BF09AA0011E709 /* PsyRadioAppDelegate.h */,
 				B3FDA14814BF09AA0011E709 /* PsyRadioAppDelegate.m */,
 				B3FDA14A14BF09AA0011E709 /* PsyRadioViewController.h */,
@@ -152,6 +166,19 @@
 				B3FDA16214BF09AA0011E709 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3FDA17214BF0A080011E709 /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				B3FDA17314BF0A080011E709 /* Packet.h */,
+				B3FDA17414BF0A080011E709 /* Packet.m */,
+				B3FDA17514BF0A080011E709 /* Queue.h */,
+				B3FDA17614BF0A080011E709 /* Queue.m */,
+				B3FDA17714BF0A080011E709 /* Radio.h */,
+				B3FDA17814BF0A080011E709 /* Radio.m */,
+			);
+			path = Radio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +291,9 @@
 				B3FDA14514BF09AA0011E709 /* main.m in Sources */,
 				B3FDA14914BF09AA0011E709 /* PsyRadioAppDelegate.m in Sources */,
 				B3FDA14C14BF09AA0011E709 /* PsyRadioViewController.m in Sources */,
+				B3FDA17914BF0A080011E709 /* Packet.m in Sources */,
+				B3FDA17A14BF0A080011E709 /* Queue.m in Sources */,
+				B3FDA17B14BF0A080011E709 /* Radio.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +402,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PsyRadio/PsyRadio-Prefix.pch";
 				INFOPLIST_FILE = "PsyRadio/PsyRadio-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -383,6 +414,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PsyRadio/PsyRadio-Prefix.pch";
 				INFOPLIST_FILE = "PsyRadio/PsyRadio-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
