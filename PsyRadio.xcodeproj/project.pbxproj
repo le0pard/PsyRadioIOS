@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B3FDA13914BF09A90011E709 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13814BF09A90011E709 /* UIKit.framework */; };
+		B3FDA13B14BF09A90011E709 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13A14BF09A90011E709 /* Foundation.framework */; };
+		B3FDA13D14BF09A90011E709 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13C14BF09A90011E709 /* CoreGraphics.framework */; };
+		B3FDA14314BF09AA0011E709 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3FDA14114BF09AA0011E709 /* InfoPlist.strings */; };
+		B3FDA14514BF09AA0011E709 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FDA14414BF09AA0011E709 /* main.m */; };
+		B3FDA14914BF09AA0011E709 /* PsyRadioAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FDA14814BF09AA0011E709 /* PsyRadioAppDelegate.m */; };
+		B3FDA14C14BF09AA0011E709 /* PsyRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FDA14B14BF09AA0011E709 /* PsyRadioViewController.m */; };
+		B3FDA14F14BF09AA0011E709 /* PsyRadioViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FDA14D14BF09AA0011E709 /* PsyRadioViewController_iPhone.xib */; };
+		B3FDA15214BF09AA0011E709 /* PsyRadioViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FDA15014BF09AA0011E709 /* PsyRadioViewController_iPad.xib */; };
+		B3FDA15A14BF09AA0011E709 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA15914BF09AA0011E709 /* SenTestingKit.framework */; };
+		B3FDA15B14BF09AA0011E709 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13814BF09A90011E709 /* UIKit.framework */; };
+		B3FDA15C14BF09AA0011E709 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13A14BF09A90011E709 /* Foundation.framework */; };
+		B3FDA16414BF09AA0011E709 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3FDA16214BF09AA0011E709 /* InfoPlist.strings */; };
+		B3FDA16714BF09AA0011E709 /* PsyRadioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FDA16614BF09AA0011E709 /* PsyRadioTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B3FDA15D14BF09AA0011E709 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3FDA12B14BF09A90011E709 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3FDA13314BF09A90011E709;
+			remoteInfo = PsyRadio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B3FDA13414BF09A90011E709 /* PsyRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsyRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3FDA13814BF09A90011E709 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B3FDA13A14BF09A90011E709 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B3FDA13C14BF09A90011E709 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B3FDA14014BF09AA0011E709 /* PsyRadio-Info.plist */ = {isa = PBXFileReference; path = "PsyRadio-Info.plist"; sourceTree = "<group>"; };
+		B3FDA14214BF09AA0011E709 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3FDA14414BF09AA0011E709 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B3FDA14614BF09AA0011E709 /* PsyRadio-Prefix.pch */ = {isa = PBXFileReference; path = "PsyRadio-Prefix.pch"; sourceTree = "<group>"; };
+		B3FDA14714BF09AA0011E709 /* PsyRadioAppDelegate.h */ = {isa = PBXFileReference; path = PsyRadioAppDelegate.h; sourceTree = "<group>"; };
+		B3FDA14814BF09AA0011E709 /* PsyRadioAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PsyRadioAppDelegate.m; sourceTree = "<group>"; };
+		B3FDA14A14BF09AA0011E709 /* PsyRadioViewController.h */ = {isa = PBXFileReference; path = PsyRadioViewController.h; sourceTree = "<group>"; };
+		B3FDA14B14BF09AA0011E709 /* PsyRadioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PsyRadioViewController.m; sourceTree = "<group>"; };
+		B3FDA14E14BF09AA0011E709 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PsyRadioViewController_iPhone.xib; sourceTree = "<group>"; };
+		B3FDA15114BF09AA0011E709 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PsyRadioViewController_iPad.xib; sourceTree = "<group>"; };
+		B3FDA15814BF09AA0011E709 /* PsyRadioTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PsyRadioTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3FDA15914BF09AA0011E709 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B3FDA16114BF09AA0011E709 /* PsyRadioTests-Info.plist */ = {isa = PBXFileReference; path = "PsyRadioTests-Info.plist"; sourceTree = "<group>"; };
+		B3FDA16314BF09AA0011E709 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3FDA16514BF09AA0011E709 /* PsyRadioTests.h */ = {isa = PBXFileReference; path = PsyRadioTests.h; sourceTree = "<group>"; };
+		B3FDA16614BF09AA0011E709 /* PsyRadioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PsyRadioTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B3FDA13114BF09A90011E709 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FDA13914BF09A90011E709 /* UIKit.framework in Frameworks */,
+				B3FDA13B14BF09A90011E709 /* Foundation.framework in Frameworks */,
+				B3FDA13D14BF09A90011E709 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FDA15414BF09AA0011E709 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FDA15A14BF09AA0011E709 /* SenTestingKit.framework in Frameworks */,
+				B3FDA15B14BF09AA0011E709 /* UIKit.framework in Frameworks */,
+				B3FDA15C14BF09AA0011E709 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B3FDA12914BF09A90011E709 = {
+			isa = PBXGroup;
+			children = (
+				B3FDA13E14BF09AA0011E709 /* PsyRadio */,
+				B3FDA15F14BF09AA0011E709 /* PsyRadioTests */,
+				B3FDA13714BF09A90011E709 /* Frameworks */,
+				B3FDA13514BF09A90011E709 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B3FDA13514BF09A90011E709 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3FDA13414BF09A90011E709 /* PsyRadio.app */,
+				B3FDA15814BF09AA0011E709 /* PsyRadioTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3FDA13714BF09A90011E709 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3FDA13814BF09A90011E709 /* UIKit.framework */,
+				B3FDA13A14BF09A90011E709 /* Foundation.framework */,
+				B3FDA13C14BF09A90011E709 /* CoreGraphics.framework */,
+				B3FDA15914BF09AA0011E709 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3FDA13E14BF09AA0011E709 /* PsyRadio */ = {
+			isa = PBXGroup;
+			children = (
+				B3FDA14714BF09AA0011E709 /* PsyRadioAppDelegate.h */,
+				B3FDA14814BF09AA0011E709 /* PsyRadioAppDelegate.m */,
+				B3FDA14A14BF09AA0011E709 /* PsyRadioViewController.h */,
+				B3FDA14B14BF09AA0011E709 /* PsyRadioViewController.m */,
+				B3FDA14D14BF09AA0011E709 /* PsyRadioViewController_iPhone.xib */,
+				B3FDA15014BF09AA0011E709 /* PsyRadioViewController_iPad.xib */,
+				B3FDA13F14BF09AA0011E709 /* Supporting Files */,
+			);
+			path = PsyRadio;
+			sourceTree = "<group>";
+		};
+		B3FDA13F14BF09AA0011E709 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B3FDA14014BF09AA0011E709 /* PsyRadio-Info.plist */,
+				B3FDA14114BF09AA0011E709 /* InfoPlist.strings */,
+				B3FDA14414BF09AA0011E709 /* main.m */,
+				B3FDA14614BF09AA0011E709 /* PsyRadio-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3FDA15F14BF09AA0011E709 /* PsyRadioTests */ = {
+			isa = PBXGroup;
+			children = (
+				B3FDA16514BF09AA0011E709 /* PsyRadioTests.h */,
+				B3FDA16614BF09AA0011E709 /* PsyRadioTests.m */,
+				B3FDA16014BF09AA0011E709 /* Supporting Files */,
+			);
+			path = PsyRadioTests;
+			sourceTree = "<group>";
+		};
+		B3FDA16014BF09AA0011E709 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B3FDA16114BF09AA0011E709 /* PsyRadioTests-Info.plist */,
+				B3FDA16214BF09AA0011E709 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B3FDA13314BF09A90011E709 /* PsyRadio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3FDA16A14BF09AA0011E709 /* Build configuration list for PBXNativeTarget "PsyRadio" */;
+			buildPhases = (
+				B3FDA13014BF09A90011E709 /* Sources */,
+				B3FDA13114BF09A90011E709 /* Frameworks */,
+				B3FDA13214BF09A90011E709 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PsyRadio;
+			productName = PsyRadio;
+			productReference = B3FDA13414BF09A90011E709 /* PsyRadio.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B3FDA15714BF09AA0011E709 /* PsyRadioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3FDA16D14BF09AA0011E709 /* Build configuration list for PBXNativeTarget "PsyRadioTests" */;
+			buildPhases = (
+				B3FDA15314BF09AA0011E709 /* Sources */,
+				B3FDA15414BF09AA0011E709 /* Frameworks */,
+				B3FDA15514BF09AA0011E709 /* Resources */,
+				B3FDA15614BF09AA0011E709 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3FDA15E14BF09AA0011E709 /* PBXTargetDependency */,
+			);
+			name = PsyRadioTests;
+			productName = PsyRadioTests;
+			productReference = B3FDA15814BF09AA0011E709 /* PsyRadioTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3FDA12B14BF09A90011E709 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = B3FDA12E14BF09A90011E709 /* Build configuration list for PBXProject "PsyRadio" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B3FDA12914BF09A90011E709;
+			productRefGroup = B3FDA13514BF09A90011E709 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3FDA13314BF09A90011E709 /* PsyRadio */,
+				B3FDA15714BF09AA0011E709 /* PsyRadioTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B3FDA13214BF09A90011E709 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FDA14314BF09AA0011E709 /* InfoPlist.strings in Resources */,
+				B3FDA14F14BF09AA0011E709 /* PsyRadioViewController_iPhone.xib in Resources */,
+				B3FDA15214BF09AA0011E709 /* PsyRadioViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FDA15514BF09AA0011E709 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FDA16414BF09AA0011E709 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B3FDA15614BF09AA0011E709 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B3FDA13014BF09A90011E709 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FDA14514BF09AA0011E709 /* main.m in Sources */,
+				B3FDA14914BF09AA0011E709 /* PsyRadioAppDelegate.m in Sources */,
+				B3FDA14C14BF09AA0011E709 /* PsyRadioViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FDA15314BF09AA0011E709 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3FDA16714BF09AA0011E709 /* PsyRadioTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B3FDA15E14BF09AA0011E709 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3FDA13314BF09A90011E709 /* PsyRadio */;
+			targetProxy = B3FDA15D14BF09AA0011E709 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B3FDA14114BF09AA0011E709 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3FDA14214BF09AA0011E709 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B3FDA14D14BF09AA0011E709 /* PsyRadioViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3FDA14E14BF09AA0011E709 /* en */,
+			);
+			name = PsyRadioViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		B3FDA15014BF09AA0011E709 /* PsyRadioViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3FDA15114BF09AA0011E709 /* en */,
+			);
+			name = PsyRadioViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		B3FDA16214BF09AA0011E709 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3FDA16314BF09AA0011E709 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B3FDA16814BF09AA0011E709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B3FDA16914BF09AA0011E709 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B3FDA16B14BF09AA0011E709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PsyRadio/PsyRadio-Prefix.pch";
+				INFOPLIST_FILE = "PsyRadio/PsyRadio-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B3FDA16C14BF09AA0011E709 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PsyRadio/PsyRadio-Prefix.pch";
+				INFOPLIST_FILE = "PsyRadio/PsyRadio-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B3FDA16E14BF09AA0011E709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PsyRadio.app/PsyRadio";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PsyRadio/PsyRadio-Prefix.pch";
+				INFOPLIST_FILE = "PsyRadioTests/PsyRadioTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		B3FDA16F14BF09AA0011E709 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PsyRadio.app/PsyRadio";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PsyRadio/PsyRadio-Prefix.pch";
+				INFOPLIST_FILE = "PsyRadioTests/PsyRadioTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B3FDA12E14BF09A90011E709 /* Build configuration list for PBXProject "PsyRadio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3FDA16814BF09AA0011E709 /* Debug */,
+				B3FDA16914BF09AA0011E709 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3FDA16A14BF09AA0011E709 /* Build configuration list for PBXNativeTarget "PsyRadio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3FDA16B14BF09AA0011E709 /* Debug */,
+				B3FDA16C14BF09AA0011E709 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B3FDA16D14BF09AA0011E709 /* Build configuration list for PBXNativeTarget "PsyRadioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3FDA16E14BF09AA0011E709 /* Debug */,
+				B3FDA16F14BF09AA0011E709 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B3FDA12B14BF09A90011E709 /* Project object */;
+}
