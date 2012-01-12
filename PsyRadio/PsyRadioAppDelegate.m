@@ -7,20 +7,18 @@
 //
 
 #import "PsyRadioAppDelegate.h"
-#import "Radio.h"
+
 #import "PsyRadioViewController.h"
 
 @implementation PsyRadioAppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
-@synthesize radio = _radio;
 
 - (void)dealloc
 {
     [_window release];
     [_viewController release];
-    [_radio release];
     [super dealloc];
 }
 
@@ -35,32 +33,7 @@
     }
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
-    
-    // radio
-    self.radio = [[Radio alloc] init];
-	[self.radio connect:@"http://stream.psyradio.com.ua:8000/64kbps" withDelegate:self withGain:(0.5)];
-    
     return YES;
-}
-
--(void)loadMainView {
-	// this was used to switch from the starting/buffering view to the now playing view, see the "Radio Javan" app in the App Store for how that works
-}
-
--(void)updateTitle:(NSString*)title {
-	// update view text
-}
-
--(void)updateGain:(float)value {
-	// update volume slider
-}
-
--(void)updatePlay:(BOOL)play {
-	// toggle play/pause button
-}
-
--(void)updateBuffering: (BOOL)value {
-	// update buffer indicator
 }
 
 

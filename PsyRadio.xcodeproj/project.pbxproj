@@ -473,6 +473,7 @@
 				B3FDA16C14BF09AA0011E709 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3FDA16D14BF09AA0011E709 /* Build configuration list for PBXNativeTarget "PsyRadioTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +482,7 @@
 				B3FDA16F14BF09AA0011E709 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

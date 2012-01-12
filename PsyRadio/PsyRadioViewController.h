@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PsyRadioViewController : UIViewController
+@class Radio;
+
+@interface PsyRadioViewController : UIViewController{
+	Radio *radio;
+}
+
+@property (nonatomic, retain) Radio *radio;
+
+
+-(void)loadMainView;
+-(void)updateTitle:(NSString*)title;
+-(void)updateGain:(float)value;
+-(void)updatePlay:(BOOL)play;
+-(void)updateBuffering: (BOOL)value;
+
 
 @end

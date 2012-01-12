@@ -167,7 +167,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 	}
 }
 
--(BOOL) connect: (NSString *)loc withDelegate:(PsyRadioAppDelegate*)delegate withGain:(float)gain {
+-(BOOL) connect: (NSString *)loc withDelegate:(PsyRadioViewController*)delegate withGain:(float)gain {
 	if (currentPacket == nil) {
 		currentPacket = [[NSMutableData alloc] init];
 	}
@@ -274,6 +274,14 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 		playing = YES;
 		[self resume];
 	}
+}
+
+-(void)togglePlay {
+    if (audioState.started) {
+        [self updatePlay:NO];
+    } else {
+        [self updatePlay:YES];
+    }
 }
 
 -(void) processAudio: (const char*)buffer withLength:(int)length {

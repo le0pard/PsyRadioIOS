@@ -27,7 +27,7 @@
 #include <AudioToolbox/AudioServices.h>
 #include "Queue.h"
 #include "Packet.h"
-#include "PsyRadioAppDelegate.h"
+#include "PsyRadioViewController.h"
 
 typedef struct {
     AudioFileStreamID             streamID;
@@ -61,15 +61,16 @@ typedef struct {
 	BOOL playing;
 	int attemptCount;
 	UIAlertView *alert;
-	PsyRadioAppDelegate *appDelegate;
+	PsyRadioViewController *appDelegate;
 	AQPlayerState audioState;
 }
 
 -(id)init;
--(BOOL)connect:(NSString *)loc withDelegate:(PsyRadioAppDelegate*)delegate withGain:(float)gain;
+-(BOOL)connect:(NSString *)loc withDelegate:(PsyRadioViewController*)delegate withGain:(float)gain;
 -(void)updateGain:(float)value;
 -(void)updatePlay:(BOOL)play;
 -(void)pause;
 -(void)resume;
+-(void)togglePlay;
 
 @end
