@@ -22,15 +22,17 @@
 
 -(void)updateTitle:(NSString*)title {
 	// update view text
-    NSLog(@"SONG META StreamTitle: %@", title);
+    NSLog(@"StreamTitle: %@", title);
 }
 
 -(void)updateGain:(float)value {
 	// update volume slider
+    NSLog(@"updateGain: %f", value);
 }
 
 -(void)updatePlay:(BOOL)play {
 	// toggle play/pause button
+    NSLog(@"updateBuffering: %c", play);
 }
 
 -(void)updateBuffering: (BOOL)value {
