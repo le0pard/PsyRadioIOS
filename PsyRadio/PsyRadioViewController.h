@@ -12,10 +12,14 @@
 
 @interface PsyRadioViewController : UIViewController{
 	Radio *radio;
+    UIButton *radioButton;
 }
 
 @property (nonatomic, retain) Radio *radio;
+@property (nonatomic, retain) IBOutlet UIButton *radioButton;
 
+
+- (IBAction)radioButtonPressed:(id)sender;
 
 -(void)loadMainView;
 -(void)updateTitle:(NSString*)title;

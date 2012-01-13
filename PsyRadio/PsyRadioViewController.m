@@ -13,6 +13,7 @@
 @implementation PsyRadioViewController
 
 @synthesize radio = _radio;
+@synthesize radioButton = _radioButton;
 
 
 /* radio */
@@ -40,6 +41,16 @@
     NSLog(@"updateBuffering: %c", value);
 }
 
+- (IBAction)radioButtonPressed:(id)sender {
+    if ([self.radioButton.titleLabel.text isEqual:@"Play"]){
+        [self.radio connect:@"http://stream.psyradio.com.ua:8000/64kbps" withDelegate:self withGain:(0.5)];
+        [self.radioButton setTitle:@"Stop" forState:UIControlStateNormal];
+    } else {
+        [self.radio pause];
+        [self.radioButton setTitle:@"Play" forState:UIControlStateNormal];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -55,7 +66,6 @@
 	// Do any additional setup after loading the view, typically from a nib.
     // radio
     self.radio = [[Radio alloc] init];
-	[self.radio connect:@"http://stream.psyradio.com.ua:8000/64kbps" withDelegate:self withGain:(0.5)];
 }
 
 - (void)viewDidUnload
