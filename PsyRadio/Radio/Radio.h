@@ -73,5 +73,6 @@ typedef struct {
 -(void)pause;
 -(void)resume;
 -(void)togglePlay;
+-(BOOL)isPlayed;
 
 @end

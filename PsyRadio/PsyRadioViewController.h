@@ -20,6 +20,7 @@
     UISlider *volumeSlider;
     UISegmentedControl *qualitySelector;
     UILabel *trackTitle;
+    UIProgressView *bufferingProgress;
 }
 
 @property (nonatomic, retain) Radio *radio;
@@ -27,18 +28,19 @@
 @property (nonatomic, retain) IBOutlet UISlider *volumeSlider;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *qualitySelector;
 @property (nonatomic, retain) IBOutlet UILabel *trackTitle;
+@property (nonatomic, retain) IBOutlet UIProgressView *bufferingProgress;
 
 
 
 - (IBAction)radioButtonPressed:(id)sender;
 - (IBAction)volumeChanged:(id)sender;
-- (IBAction)qualityChanged:(id)sender;
+
 
 -(void)loadMainView;
 -(void)updateTitle:(NSString*)title;
 -(void)updateGain:(float)value;
 -(void)updatePlay:(BOOL)play;
--(void)updateBuffering: (BOOL)value;
-
+-(void)updateBuffering:(BOOL)value;
+-(void)updateBufferingValue:(float)value;
 
 @end

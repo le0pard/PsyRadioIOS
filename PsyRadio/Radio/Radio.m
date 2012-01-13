@@ -62,7 +62,7 @@ static void audioQueueCallBack(void *inUserData, AudioQueueRef inAQ, AudioQueueB
 		}
 		
 		if (inBuffer->mAudioDataByteSize > 0) {
-			NSLog(@"AudioQueueEnqueueBuffer %lu bytes, %d descriptions", inBuffer->mAudioDataByteSize, numDescriptions);
+			//NSLog(@"AudioQueueEnqueueBuffer %lu bytes, %d descriptions", inBuffer->mAudioDataByteSize, numDescriptions);
 			AudioQueueEnqueueBuffer(inAQ, inBuffer, numDescriptions, audioState->descriptions);
 			audioState->buffering = NO;
 		}
@@ -87,7 +87,7 @@ static void PropertyListener(void *inClientData,
 	OSStatus err = noErr;
 	AQPlayerState *audioState = (AQPlayerState *)inClientData;
 	
-	NSLog(@"found property '%lu%lu%lu%lu'\n", (inPropertyID>>24)&255, (inPropertyID>>16)&255, (inPropertyID>>8)&255, inPropertyID&255);
+	// NSLog(@"found property '%lu%lu%lu%lu'\n", (inPropertyID>>24)&255, (inPropertyID>>16)&255, (inPropertyID>>8)&255, inPropertyID&255);
 	
 	if (inPropertyID == kAudioFileStreamProperty_ReadyToProducePackets) {
 		AudioSessionSetActive(true);
@@ -291,6 +291,10 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
     }
 }
 
+-(BOOL)isPlayed {
+    return audioState.started;
+}
+
 -(void) processAudio: (const char*)buffer withLength:(int)length {
 	if (!audioState.paused) {
 		//		NSLog(@"processAudio %d bytes", length);
@@ -305,8 +309,9 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 		}
 		@synchronized (audioState.packetQueue) {
 			if (audioState.outOfBuffers > kMaxOutOfBuffers) {
-				[self pause];
-				[NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(resume) userInfo:nil repeats:NO];
+				//[self pause];
+				//[NSTimer scheduledTimerWithTimeInterval:20 target:self selector:@selector(resume) userInfo:nil repeats:NO];
+                NSLog(@"OUT OF BUFFERS DONE!!! READ ME");
 				audioState.outOfBuffers = 0;
 			}
 		}
@@ -315,6 +320,10 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 
 -(void) updateTitle {
 	[appDelegate updateTitle:title];
+}
+
+-(void)updateBufferingValue:(float)value {
+	[appDelegate updateBufferingValue:value];
 }
 
 -(void) fillcurrentPacket: (const char *)buffer withLength:(int)len {
@@ -388,10 +397,11 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 	NSLog(@"attemptCount = %u", attemptCount);
 	if (attemptCount == 3)
 	{
-		alert = [[UIAlertView alloc] initWithTitle:@"Unable To Play" message:@"We can't seem to play Radio Javan at this moment. Please check your internet connection on your device and make sure you are either on a 3G or WiFi connection." 
+		alert = [[UIAlertView alloc] initWithTitle:@"Unable To Play" message:@"We can't seem to play Radio at this moment. Please check your internet connection on your device and make sure you are either on a 3G or WiFi connection." 
 										  delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
 		attemptCount = 0;
+        [self pause];
 	}
 }
 

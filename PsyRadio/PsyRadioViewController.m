@@ -16,16 +16,18 @@
 @synthesize volumeSlider = _volumeSlider;
 @synthesize qualitySelector = _qualitySelector;
 @synthesize trackTitle = _trackTitle;
+@synthesize bufferingProgress = _bufferingProgress;
 
 
 /* radio */
 -(void)loadMainView {
 	// this was used to switch from the starting/buffering view to the now playing view, see the "Radio Javan" app in the App Store for how that works
+    NSLog(@"loadMainView: Radio");
 }
 
 -(void)updateTitle:(NSString*)title {
 	// update view text
-    title = [title stringByReplacingOccurrencesOfString:@"StreamTitle='(.*)'" 
+    title = [title stringByReplacingOccurrencesOfString:@"StreamTitle='(.*)';" 
                                        withString:@"$1" 
                                           options:NSRegularExpressionSearch
                                                   range:NSMakeRange(0, [title length])];
@@ -34,7 +36,6 @@
 
 -(void)updateGain:(float)value {
 	// update volume slider
-    //NSLog(@"updateGain: %f", value);
 }
 
 -(void)updatePlay:(BOOL)play {
@@ -42,9 +43,14 @@
     //NSLog(@"updateBuffering: %c", play);
 }
 
--(void)updateBuffering: (BOOL)value {
+-(void)updateBuffering:(BOOL)value {
 	// update buffer indicator
     NSLog(@"updateBuffering: %@", (value ? @"YES" : @"NO"));
+}
+
+-(void)updateBufferingValue:(float)value {
+	// update buffer value
+    
 }
 
 - (NSString *)getStreamingUrl {
@@ -70,18 +76,13 @@
         [self.radioButton setTitle:@"Stop" forState:UIControlStateNormal];
     } else {
         [self.radio pause];
+        //[self.streamer stop];
         [self.radioButton setTitle:@"Play" forState:UIControlStateNormal];
     }
 }
 
 - (IBAction)volumeChanged:(id)sender {
     [self.radio updateGain:self.volumeSlider.value];
-}
-
-- (IBAction)qualityChanged:(id)sender {
-    [self.radio pause];
-    [self.radio connect:[self getStreamingUrl] withDelegate:self withGain:self.volumeSlider.value withQuality:[self getStreamingQualityMult]];
-    [self.radioButton setTitle:@"Stop" forState:UIControlStateNormal];
 }
 
 
@@ -167,6 +168,11 @@
 
 - (void)dealloc{
     [_radio release];
+    [_radioButton release];
+    [_volumeSlider release];
+    [_qualitySelector release];
+    [_trackTitle release];
+    [_bufferingProgress release];
     [super dealloc];
 }
 
