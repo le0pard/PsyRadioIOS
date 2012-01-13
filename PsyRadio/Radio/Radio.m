@@ -167,6 +167,13 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 	}
 }
 
+-(BOOL) connect: (NSString *)loc withDelegate:(PsyRadioViewController*)delegate withGain:(float)gain withQuality:(int)quality {
+    kPacketSize = 8000 * quality;
+    kAudioBufferSize = 8000 * quality;
+    kMaxOutOfBuffers = 15 * quality;
+    return [self connect:loc withDelegate:delegate withGain:gain];
+}
+
 -(BOOL) connect: (NSString *)loc withDelegate:(PsyRadioViewController*)delegate withGain:(float)gain {
 	if (currentPacket == nil) {
 		currentPacket = [[NSMutableData alloc] init];
@@ -299,7 +306,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 		@synchronized (audioState.packetQueue) {
 			if (audioState.outOfBuffers > kMaxOutOfBuffers) {
 				[self pause];
-				[NSTimer scheduledTimerWithTimeInterval:35 target:self selector:@selector(resume) userInfo:nil repeats:NO];
+				[NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(resume) userInfo:nil repeats:NO];
 				audioState.outOfBuffers = 0;
 			}
 		}

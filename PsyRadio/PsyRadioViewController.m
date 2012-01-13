@@ -9,11 +9,13 @@
 #import "PsyRadioViewController.h"
 #import "Radio.h"
 
-
 @implementation PsyRadioViewController
 
 @synthesize radio = _radio;
 @synthesize radioButton = _radioButton;
+@synthesize volumeSlider = _volumeSlider;
+@synthesize qualitySelector = _qualitySelector;
+@synthesize trackTitle = _trackTitle;
 
 
 /* radio */
@@ -23,32 +25,63 @@
 
 -(void)updateTitle:(NSString*)title {
 	// update view text
-    NSLog(@"StreamTitle: %@", title);
+    title = [title stringByReplacingOccurrencesOfString:@"StreamTitle='(.*)'" 
+                                       withString:@"$1" 
+                                          options:NSRegularExpressionSearch
+                                                  range:NSMakeRange(0, [title length])];
+    [self.trackTitle setText:title];
 }
 
 -(void)updateGain:(float)value {
 	// update volume slider
-    NSLog(@"updateGain: %f", value);
+    //NSLog(@"updateGain: %f", value);
 }
 
 -(void)updatePlay:(BOOL)play {
 	// toggle play/pause button
-    NSLog(@"updateBuffering: %c", play);
+    //NSLog(@"updateBuffering: %c", play);
 }
 
 -(void)updateBuffering: (BOOL)value {
 	// update buffer indicator
-    NSLog(@"updateBuffering: %c", value);
+    NSLog(@"updateBuffering: %@", (value ? @"YES" : @"NO"));
+}
+
+- (NSString *)getStreamingUrl {
+    switch ([self.qualitySelector selectedSegmentIndex]) {
+        case 1:
+            return MEDIUM_URL_AUDIO;
+            break;
+        case 2:
+            return HIGH_URL_AUDIO;
+            break;
+        default:
+            return LOW_URL_AUDIO;
+    }
+}
+
+- (int)getStreamingQualityMult {
+    return [self.qualitySelector selectedSegmentIndex] + 1;
 }
 
 - (IBAction)radioButtonPressed:(id)sender {
     if ([self.radioButton.titleLabel.text isEqual:@"Play"]){
-        [self.radio connect:@"http://stream.psyradio.com.ua:8000/64kbps" withDelegate:self withGain:(0.5)];
+        [self.radio connect:[self getStreamingUrl] withDelegate:self withGain:self.volumeSlider.value withQuality:[self getStreamingQualityMult]];
         [self.radioButton setTitle:@"Stop" forState:UIControlStateNormal];
     } else {
         [self.radio pause];
         [self.radioButton setTitle:@"Play" forState:UIControlStateNormal];
     }
+}
+
+- (IBAction)volumeChanged:(id)sender {
+    [self.radio updateGain:self.volumeSlider.value];
+}
+
+- (IBAction)qualityChanged:(id)sender {
+    [self.radio pause];
+    [self.radio connect:[self getStreamingUrl] withDelegate:self withGain:self.volumeSlider.value withQuality:[self getStreamingQualityMult]];
+    [self.radioButton setTitle:@"Stop" forState:UIControlStateNormal];
 }
 
 

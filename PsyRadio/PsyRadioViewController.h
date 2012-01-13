@@ -8,18 +8,31 @@
 
 #import <UIKit/UIKit.h>
 
+#define LOW_URL_AUDIO @"http://stream.psyradio.com.ua:8000/64kbps"
+#define MEDIUM_URL_AUDIO @"http://stream.psyradio.com.ua:8000/128kbps"
+#define HIGH_URL_AUDIO @"http://stream.psyradio.com.ua:8000/256kbps"
+
 @class Radio;
 
 @interface PsyRadioViewController : UIViewController{
 	Radio *radio;
     UIButton *radioButton;
+    UISlider *volumeSlider;
+    UISegmentedControl *qualitySelector;
+    UILabel *trackTitle;
 }
 
 @property (nonatomic, retain) Radio *radio;
 @property (nonatomic, retain) IBOutlet UIButton *radioButton;
+@property (nonatomic, retain) IBOutlet UISlider *volumeSlider;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *qualitySelector;
+@property (nonatomic, retain) IBOutlet UILabel *trackTitle;
+
 
 
 - (IBAction)radioButtonPressed:(id)sender;
+- (IBAction)volumeChanged:(id)sender;
+- (IBAction)qualityChanged:(id)sender;
 
 -(void)loadMainView;
 -(void)updateTitle:(NSString*)title;

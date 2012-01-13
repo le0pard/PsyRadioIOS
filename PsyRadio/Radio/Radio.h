@@ -66,6 +66,7 @@ typedef struct {
 }
 
 -(id)init;
+-(BOOL) connect: (NSString *)loc withDelegate:(PsyRadioViewController*)delegate withGain:(float)gain withQuality:(int)quality;
 -(BOOL)connect:(NSString *)loc withDelegate:(PsyRadioViewController*)delegate withGain:(float)gain;
 -(void)updateGain:(float)value;
 -(void)updatePlay:(BOOL)play;
