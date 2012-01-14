@@ -37,6 +37,7 @@
 -(void)updateGain:(float)value;
 -(void)updatePlay:(BOOL)play;
 -(void)updateBuffering:(BOOL)value;
--(void)updateBufferingValue:(float)buffer_value withBufferSize:(float)buffer_size;
+-(void)updateBufferingValue:(int)buffer_value withBufferSize:(int)buffer_size;
+-(void)playingStarted;
 
 @end

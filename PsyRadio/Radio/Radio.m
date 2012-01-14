@@ -138,7 +138,8 @@ static void PacketsProc(void *inClientData,
 		for (int i = 0; i < kNumberBuffers; ++i) {
 			audioQueueCallBack(inClientData, audioState->mQueue, audioState->mBuffers[i]);
 		}
-		NSLog(@"STARTING THE QUEUE");
+		//NSLog(@"STARTING THE QUEUE");
+        [audioState->appDelegate playingStarted];
 		AudioQueueSetParameter(audioState->mQueue, kAudioQueueParam_Volume, audioState->currentGain);
 		AudioQueueStart(audioState->mQueue, NULL);
 		audioState->started = YES;

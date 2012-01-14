@@ -13,6 +13,11 @@
 		B3DC54A414C0FFFE0051D342 /* sound_meter_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54A214C0FFFE0051D342 /* sound_meter_background.png */; };
 		B3DC54A514C0FFFE0051D342 /* sound_meter_glare.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54A314C0FFFE0051D342 /* sound_meter_glare.png */; };
 		B3DC54B314C1033B0051D342 /* LevelMeterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC54B214C1033B0051D342 /* LevelMeterView.m */; };
+		B3DC54C814C195880051D342 /* loadingbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54C414C195880051D342 /* loadingbutton.png */; };
+		B3DC54C914C195880051D342 /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54C514C195880051D342 /* pausebutton.png */; };
+		B3DC54CA14C195880051D342 /* playbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54C614C195880051D342 /* playbutton.png */; };
+		B3DC54CB14C195880051D342 /* stopbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54C714C195880051D342 /* stopbutton.png */; };
+		B3DC54D214C196F80051D342 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DC54D114C196F70051D342 /* QuartzCore.framework */; };
 		B3FDA13914BF09A90011E709 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13814BF09A90011E709 /* UIKit.framework */; };
 		B3FDA13B14BF09A90011E709 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13A14BF09A90011E709 /* Foundation.framework */; };
 		B3FDA13D14BF09A90011E709 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13C14BF09A90011E709 /* CoreGraphics.framework */; };
@@ -53,6 +58,11 @@
 		B3DC54A314C0FFFE0051D342 /* sound_meter_glare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sound_meter_glare.png; sourceTree = "<group>"; };
 		B3DC54B114C1033B0051D342 /* LevelMeterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMeterView.h; sourceTree = "<group>"; };
 		B3DC54B214C1033B0051D342 /* LevelMeterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelMeterView.m; sourceTree = "<group>"; };
+		B3DC54C414C195880051D342 /* loadingbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingbutton.png; sourceTree = "<group>"; };
+		B3DC54C514C195880051D342 /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pausebutton.png; sourceTree = "<group>"; };
+		B3DC54C614C195880051D342 /* playbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playbutton.png; sourceTree = "<group>"; };
+		B3DC54C714C195880051D342 /* stopbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopbutton.png; sourceTree = "<group>"; };
+		B3DC54D114C196F70051D342 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B3FDA13414BF09A90011E709 /* PsyRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsyRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FDA13814BF09A90011E709 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3FDA13A14BF09A90011E709 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3DC54D214C196F80051D342 /* QuartzCore.framework in Frameworks */,
 				B3DC549414C0E6070051D342 /* CFNetwork.framework in Frameworks */,
 				B3FDA17114BF09D40011E709 /* AudioToolbox.framework in Frameworks */,
 				B3FDA13914BF09A90011E709 /* UIKit.framework in Frameworks */,
@@ -130,6 +141,10 @@
 		B3DC54A114C0FFFE0051D342 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B3DC54C414C195880051D342 /* loadingbutton.png */,
+				B3DC54C514C195880051D342 /* pausebutton.png */,
+				B3DC54C614C195880051D342 /* playbutton.png */,
+				B3DC54C714C195880051D342 /* stopbutton.png */,
 				B3DC54A214C0FFFE0051D342 /* sound_meter_background.png */,
 				B3DC54A314C0FFFE0051D342 /* sound_meter_glare.png */,
 			);
@@ -168,6 +183,7 @@
 		B3FDA13714BF09A90011E709 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3DC54D114C196F70051D342 /* QuartzCore.framework */,
 				B3DC549314C0E6070051D342 /* CFNetwork.framework */,
 				B3FDA17014BF09D40011E709 /* AudioToolbox.framework */,
 				B3FDA13814BF09A90011E709 /* UIKit.framework */,
@@ -246,8 +262,8 @@
 			buildConfigurationList = B3FDA16A14BF09AA0011E709 /* Build configuration list for PBXNativeTarget "PsyRadio" */;
 			buildPhases = (
 				B3FDA13014BF09A90011E709 /* Sources */,
-				B3FDA13114BF09A90011E709 /* Frameworks */,
 				B3FDA13214BF09A90011E709 /* Resources */,
+				B3FDA13114BF09A90011E709 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -313,6 +329,10 @@
 				B3FDA15214BF09AA0011E709 /* PsyRadioViewController_iPad.xib in Resources */,
 				B3DC54A414C0FFFE0051D342 /* sound_meter_background.png in Resources */,
 				B3DC54A514C0FFFE0051D342 /* sound_meter_glare.png in Resources */,
+				B3DC54C814C195880051D342 /* loadingbutton.png in Resources */,
+				B3DC54C914C195880051D342 /* pausebutton.png in Resources */,
+				B3DC54CA14C195880051D342 /* playbutton.png in Resources */,
+				B3DC54CB14C195880051D342 /* stopbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
