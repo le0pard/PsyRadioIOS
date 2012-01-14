@@ -44,6 +44,7 @@ typedef struct {
 	AudioQueueBufferRef			  freeBuffers[6];
 	float						  currentGain;
 	int							  outOfBuffers;
+    PsyRadioViewController        *appDelegate;
 } AQPlayerState;
 
 @interface Radio : NSObject {
@@ -66,7 +67,7 @@ typedef struct {
 }
 
 -(id)init;
--(BOOL) connect: (NSString *)loc withDelegate:(PsyRadioViewController*)delegate withGain:(float)gain withQuality:(int)quality;
+-(BOOL)connect:(NSString *)loc withDelegate:(PsyRadioViewController*)delegate withGain:(float)gain withQualityIndex:(int)qualityIndex;
 -(BOOL)connect:(NSString *)loc withDelegate:(PsyRadioViewController*)delegate withGain:(float)gain;
 -(void)updateGain:(float)value;
 -(void)updatePlay:(BOOL)play;

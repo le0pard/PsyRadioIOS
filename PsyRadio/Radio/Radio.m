@@ -63,6 +63,7 @@ static void audioQueueCallBack(void *inUserData, AudioQueueRef inAQ, AudioQueueB
 		
 		if (inBuffer->mAudioDataByteSize > 0) {
 			//NSLog(@"AudioQueueEnqueueBuffer %lu bytes, %d descriptions", inBuffer->mAudioDataByteSize, numDescriptions);
+            [audioState->appDelegate updateBufferingValue:inBuffer->mAudioDataByteSize withBufferSize:kAudioBufferSize];
 			AudioQueueEnqueueBuffer(inAQ, inBuffer, numDescriptions, audioState->descriptions);
 			audioState->buffering = NO;
 		}
@@ -87,7 +88,7 @@ static void PropertyListener(void *inClientData,
 	OSStatus err = noErr;
 	AQPlayerState *audioState = (AQPlayerState *)inClientData;
 	
-	// NSLog(@"found property '%lu%lu%lu%lu'\n", (inPropertyID>>24)&255, (inPropertyID>>16)&255, (inPropertyID>>8)&255, inPropertyID&255);
+	// NSLog(@"found property '%c%c%c%c'\n", (inPropertyID>>24)&255, (inPropertyID>>16)&255, (inPropertyID>>8)&255, inPropertyID&255);
 	
 	if (inPropertyID == kAudioFileStreamProperty_ReadyToProducePackets) {
 		AudioSessionSetActive(true);
@@ -167,10 +168,8 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 	}
 }
 
--(BOOL) connect: (NSString *)loc withDelegate:(PsyRadioViewController*)delegate withGain:(float)gain withQuality:(int)quality {
-    kPacketSize = 8000 * quality;
-    kAudioBufferSize = 8000 * quality;
-    kMaxOutOfBuffers = 15 * quality;
+-(BOOL) connect: (NSString *)loc withDelegate:(PsyRadioViewController*)delegate withGain:(float)gain withQualityIndex:(int)qualityIndex{
+    kPacketSize = kAudioBufferSize = 8000 * qualityIndex;
     return [self connect:loc withDelegate:delegate withGain:gain];
 }
 
@@ -200,6 +199,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 	audioState.paused = NO;
 	audioState.totalBytes = 0;
 	audioState.currentGain = gain;
+    audioState.appDelegate = appDelegate;
 	
 	AudioFileStreamOpen(&audioState,  &PropertyListener, &PacketsProc,  kAudioFileMP3Type, &audioState.streamID);
 	
@@ -320,10 +320,6 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 
 -(void) updateTitle {
 	[appDelegate updateTitle:title];
-}
-
--(void)updateBufferingValue:(float)value {
-	[appDelegate updateBufferingValue:value];
 }
 
 -(void) fillcurrentPacket: (const char *)buffer withLength:(int)len {

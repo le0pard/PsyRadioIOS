@@ -10,6 +10,9 @@
 		B3DC549114C0E5EB0051D342 /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC549014C0E5EB0051D342 /* AudioStreamer.m */; };
 		B3DC549414C0E6070051D342 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DC549314C0E6070051D342 /* CFNetwork.framework */; };
 		B3DC549714C0E62D0051D342 /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC549614C0E62C0051D342 /* UIDevice+Hardware.m */; };
+		B3DC54A414C0FFFE0051D342 /* sound_meter_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54A214C0FFFE0051D342 /* sound_meter_background.png */; };
+		B3DC54A514C0FFFE0051D342 /* sound_meter_glare.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54A314C0FFFE0051D342 /* sound_meter_glare.png */; };
+		B3DC54B314C1033B0051D342 /* LevelMeterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC54B214C1033B0051D342 /* LevelMeterView.m */; };
 		B3FDA13914BF09A90011E709 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13814BF09A90011E709 /* UIKit.framework */; };
 		B3FDA13B14BF09A90011E709 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13A14BF09A90011E709 /* Foundation.framework */; };
 		B3FDA13D14BF09A90011E709 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13C14BF09A90011E709 /* CoreGraphics.framework */; };
@@ -46,6 +49,10 @@
 		B3DC549314C0E6070051D342 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B3DC549514C0E62C0051D342 /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
 		B3DC549614C0E62C0051D342 /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
+		B3DC54A214C0FFFE0051D342 /* sound_meter_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sound_meter_background.png; sourceTree = "<group>"; };
+		B3DC54A314C0FFFE0051D342 /* sound_meter_glare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sound_meter_glare.png; sourceTree = "<group>"; };
+		B3DC54B114C1033B0051D342 /* LevelMeterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMeterView.h; sourceTree = "<group>"; };
+		B3DC54B214C1033B0051D342 /* LevelMeterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelMeterView.m; sourceTree = "<group>"; };
 		B3FDA13414BF09A90011E709 /* PsyRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsyRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FDA13814BF09A90011E709 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3FDA13A14BF09A90011E709 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,11 +119,38 @@
 			path = AudioStreamer;
 			sourceTree = "<group>";
 		};
+		B3DC54A014C0FFFE0051D342 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B3DC54A114C0FFFE0051D342 /* images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B3DC54A114C0FFFE0051D342 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B3DC54A214C0FFFE0051D342 /* sound_meter_background.png */,
+				B3DC54A314C0FFFE0051D342 /* sound_meter_glare.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		B3DC54A714C1014D0051D342 /* AudioView */ = {
+			isa = PBXGroup;
+			children = (
+				B3DC54B114C1033B0051D342 /* LevelMeterView.h */,
+				B3DC54B214C1033B0051D342 /* LevelMeterView.m */,
+			);
+			path = AudioView;
+			sourceTree = "<group>";
+		};
 		B3FDA12914BF09A90011E709 = {
 			isa = PBXGroup;
 			children = (
 				B3FDA13E14BF09AA0011E709 /* PsyRadio */,
 				B3FDA15F14BF09AA0011E709 /* PsyRadioTests */,
+				B3DC54A014C0FFFE0051D342 /* Resources */,
 				B3FDA13714BF09A90011E709 /* Frameworks */,
 				B3FDA13514BF09A90011E709 /* Products */,
 			);
@@ -147,6 +181,7 @@
 		B3FDA13E14BF09AA0011E709 /* PsyRadio */ = {
 			isa = PBXGroup;
 			children = (
+				B3DC54A714C1014D0051D342 /* AudioView */,
 				B3DC548E14C0E5EB0051D342 /* AudioStreamer */,
 				B3FDA17214BF0A080011E709 /* Radio */,
 				B3FDA14714BF09AA0011E709 /* PsyRadioAppDelegate.h */,
@@ -276,6 +311,8 @@
 				B3FDA14314BF09AA0011E709 /* InfoPlist.strings in Resources */,
 				B3FDA14F14BF09AA0011E709 /* PsyRadioViewController_iPhone.xib in Resources */,
 				B3FDA15214BF09AA0011E709 /* PsyRadioViewController_iPad.xib in Resources */,
+				B3DC54A414C0FFFE0051D342 /* sound_meter_background.png in Resources */,
+				B3DC54A514C0FFFE0051D342 /* sound_meter_glare.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +355,7 @@
 				B3FDA17B14BF0A080011E709 /* Radio.m in Sources */,
 				B3DC549114C0E5EB0051D342 /* AudioStreamer.m in Sources */,
 				B3DC549714C0E62D0051D342 /* UIDevice+Hardware.m in Sources */,
+				B3DC54B314C1033B0051D342 /* LevelMeterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

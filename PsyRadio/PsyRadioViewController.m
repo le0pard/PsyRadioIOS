@@ -16,7 +16,6 @@
 @synthesize volumeSlider = _volumeSlider;
 @synthesize qualitySelector = _qualitySelector;
 @synthesize trackTitle = _trackTitle;
-@synthesize bufferingProgress = _bufferingProgress;
 
 
 /* radio */
@@ -48,9 +47,9 @@
     NSLog(@"updateBuffering: %@", (value ? @"YES" : @"NO"));
 }
 
--(void)updateBufferingValue:(float)value {
+-(void)updateBufferingValue:(float)buffer_value withBufferSize:(float)buffer_size {
 	// update buffer value
-    
+    NSLog(@"updateBufferingValue: %f of %f", buffer_value, buffer_size);
 }
 
 - (NSString *)getStreamingUrl {
@@ -66,13 +65,9 @@
     }
 }
 
-- (int)getStreamingQualityMult {
-    return [self.qualitySelector selectedSegmentIndex] + 1;
-}
-
 - (IBAction)radioButtonPressed:(id)sender {
     if ([self.radioButton.titleLabel.text isEqual:@"Play"]){
-        [self.radio connect:[self getStreamingUrl] withDelegate:self withGain:self.volumeSlider.value withQuality:[self getStreamingQualityMult]];
+        [self.radio connect:[self getStreamingUrl] withDelegate:self withGain:self.volumeSlider.value withQualityIndex:[self.qualitySelector selectedSegmentIndex] + 1];
         [self.radioButton setTitle:@"Stop" forState:UIControlStateNormal];
     } else {
         [self.radio pause];
@@ -172,7 +167,6 @@
     [_volumeSlider release];
     [_qualitySelector release];
     [_trackTitle release];
-    [_bufferingProgress release];
     [super dealloc];
 }
 
