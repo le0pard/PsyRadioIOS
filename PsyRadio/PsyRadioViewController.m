@@ -162,27 +162,43 @@
     [[self view] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_sand.png"]]];
     
     //slider
-    UIImage *minImage = [[UIImage imageNamed:@"slider_minimum.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
-    UIImage *maxImage = [[UIImage imageNamed:@"slider_maximum.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+    UIImage *minImage = NULL;
+    UIImage *maxImage = NULL;
+    if ([[UIImage class] respondsToSelector:@selector(resizableImageWithCapInsets)]) {
+        minImage = [[UIImage imageNamed:@"slider_minimum.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+        maxImage = [[UIImage imageNamed:@"slider_maximum.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+    } else {
+        minImage = [[UIImage imageNamed:@"slider_minimum.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+        maxImage = [[UIImage imageNamed:@"slider_maximum.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+    }
     UIImage *thumbImage = [UIImage imageNamed:@"thumb.png"];
-    
-    [[UISlider appearance] setMaximumTrackImage:maxImage forState:UIControlStateNormal];
-    [[UISlider appearance] setMinimumTrackImage:minImage forState:UIControlStateNormal];
-    [[UISlider appearance] setThumbImage:thumbImage forState:UIControlStateNormal];
+
+    [self.volumeSlider setMaximumTrackImage:maxImage forState:UIControlStateNormal];
+    [self.volumeSlider setMinimumTrackImage:minImage forState:UIControlStateNormal];
+    [self.volumeSlider setThumbImage:thumbImage forState:UIControlStateNormal];
     
     //sengemnt control
-    UIImage *segmentSelected = [[UIImage imageNamed:@"segcontrol_sel.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
-    UIImage *segmentUnselected = [[UIImage imageNamed:@"segcontrol_uns.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
+    UIImage *segmentSelected = NULL;
+    UIImage *segmentUnselected = NULL;
+    if ([[UIImage class] respondsToSelector:@selector(resizableImageWithCapInsets)]) {
+        segmentSelected = [[UIImage imageNamed:@"segcontrol_sel.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
+        segmentUnselected = [[UIImage imageNamed:@"segcontrol_uns.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
+    } else {
+        segmentSelected = [[UIImage imageNamed:@"segcontrol_sel.png"] stretchableImageWithLeftCapWidth:15.0 topCapHeight:15.0];
+        segmentUnselected = [[UIImage imageNamed:@"segcontrol_uns.png"] stretchableImageWithLeftCapWidth:15.0 topCapHeight:15.0];
+    }
     UIImage *segmentSelectedUnselected = [UIImage imageNamed:@"segcontrol_sel-uns.png"];
     UIImage *segUnselectedSelected = [UIImage imageNamed:@"segcontrol_uns-sel.png"];
     UIImage *segmentUnselectedUnselected = [UIImage imageNamed:@"segcontrol_uns-uns.png"];
     
-    [[UISegmentedControl appearance] setBackgroundImage:segmentUnselected forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [[UISegmentedControl appearance] setBackgroundImage:segmentSelected forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    if ([self.qualitySelector respondsToSelector:@selector(setBackgroundImage:forState:barMetrics:)]){
+        [self.qualitySelector setBackgroundImage:segmentUnselected forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        [self.qualitySelector setBackgroundImage:segmentSelected forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
     
-    [[UISegmentedControl appearance] setDividerImage:segmentUnselectedUnselected forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [[UISegmentedControl appearance] setDividerImage:segmentSelectedUnselected forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [[UISegmentedControl appearance] setDividerImage:segUnselectedSelected forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+        [self.qualitySelector setDividerImage:segmentUnselectedUnselected forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        [self.qualitySelector setDividerImage:segmentSelectedUnselected forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        [self.qualitySelector setDividerImage:segUnselectedSelected forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    }
 }
 
 - (void)viewDidLoad
