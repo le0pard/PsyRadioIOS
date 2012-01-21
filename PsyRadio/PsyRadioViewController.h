@@ -20,6 +20,7 @@
     UISlider *volumeSlider;
     UISegmentedControl *qualitySelector;
     UILabel *trackTitle;
+    UIImageView *logoImage;
 }
 
 @property (nonatomic, retain) Radio *radio;
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) IBOutlet UISlider *volumeSlider;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *qualitySelector;
 @property (nonatomic, retain) IBOutlet UILabel *trackTitle;
+@property (nonatomic, retain) IBOutlet UIImageView *logoImage;
 
 - (IBAction)radioButtonPressed:(id)sender;
 - (IBAction)volumeChanged:(id)sender;

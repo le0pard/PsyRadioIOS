@@ -17,6 +17,7 @@
 @synthesize volumeSlider = _volumeSlider;
 @synthesize qualitySelector = _qualitySelector;
 @synthesize trackTitle = _trackTitle;
+@synthesize logoImage = _logoImage;
 
 
 //
@@ -114,7 +115,7 @@
 }
 
 -(void)playingStarted {
-    [self setButtonImage:[UIImage imageNamed:@"stopbutton.png"]];
+    [self setButtonImage:[UIImage imageNamed:@"pausebutton.png"]];
 }
 
 - (NSString *)getStreamingUrl {
@@ -132,7 +133,7 @@
 
 - (IBAction)radioButtonPressed:(id)sender {
     
-    if ([self.radioButton.currentImage isEqual:[UIImage imageNamed:@"playbutton.png"]] || [self.radioButton.currentImage isEqual:[UIImage imageNamed:@"pausebutton.png"]])
+    if ([self.radioButton.currentImage isEqual:[UIImage imageNamed:@"playbutton.png"]])
 	{
 		[self.radio connect:[self getStreamingUrl] withDelegate:self withGain:self.volumeSlider.value withQualityIndex:[self.qualitySelector selectedSegmentIndex] + 1];
 		[self setButtonImage:[UIImage imageNamed:@"loadingbutton.png"]];
@@ -178,6 +179,7 @@
     [self.volumeSlider setThumbImage:thumbImage forState:UIControlStateNormal];
     
     //sengemnt control
+    /*
     UIImage *segmentSelected = NULL;
     UIImage *segmentUnselected = NULL;
     if ([[UIImage class] respondsToSelector:@selector(resizableImageWithCapInsets)]) {
@@ -199,6 +201,7 @@
         [self.qualitySelector setDividerImage:segmentSelectedUnselected forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         [self.qualitySelector setDividerImage:segUnselectedSelected forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
     }
+     */
 }
 
 - (void)viewDidLoad
@@ -244,6 +247,27 @@
 	[super viewDidDisappear:animated];
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    switch (toInterfaceOrientation) {
+        case UIInterfaceOrientationLandscapeLeft:
+        case UIInterfaceOrientationLandscapeRight:
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                self.logoImage.frame =  CGRectMake(120, 5, 80, 80);
+            } else {
+                self.logoImage.frame =  CGRectMake(240, 20, 300, 300);
+            }
+            break;
+        default:
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                self.logoImage.frame =  CGRectMake(160, 10, 150, 150);
+            } else {
+                self.logoImage.frame =  CGRectMake(240, 20, 505, 505);
+            }
+            break;
+    }
+}
+
 //Make sure we can recieve remote control events
 - (BOOL)canBecomeFirstResponder {
     return YES;
@@ -264,10 +288,10 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     /*
+    // Return YES for supported orientations
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+        return (interfaceOrientation == UIInterfaceOrientationPortrait);
     } else {
         return YES;
     }
@@ -281,6 +305,7 @@
     [_volumeSlider release];
     [_qualitySelector release];
     [_trackTitle release];
+    [_logoImage release];
     [super dealloc];
 }
 
