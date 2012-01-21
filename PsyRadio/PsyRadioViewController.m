@@ -161,6 +161,7 @@
 - (void)setupIntrface {
     //background
     [[self view] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_sand.png"]]];
+    self.trackTitle.textAlignment = UITextAlignmentCenter;
     
     //slider
     UIImage *minImage = NULL;
