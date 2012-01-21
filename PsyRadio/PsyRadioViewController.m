@@ -20,6 +20,10 @@
 @synthesize logoImage = _logoImage;
 
 
+- (void)aboutViewControllerDidFinish:(AboutViewController *)controller {
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 //
 // spinButton
 //
@@ -83,7 +87,7 @@
 /* radio */
 -(void)loadMainView {
 	// this was used to switch from the starting/buffering view to the now playing view, see the "Radio Javan" app in the App Store for how that works
-    NSLog(@"loadMainView: Radio");
+    //NSLog(@"loadMainView: Radio");
 }
 
 -(void)updateTitle:(NSString*)title {
@@ -106,12 +110,12 @@
 
 -(void)updateBuffering:(BOOL)value {
 	// update buffer indicator
-    NSLog(@"updateBuffering: %@", (value ? @"YES" : @"NO"));
+    //NSLog(@"updateBuffering: %@", (value ? @"YES" : @"NO"));
 }
 
 -(void)updateBufferingValue:(int)buffer_value withBufferSize:(int)buffer_size {
 	// update buffer value
-    NSLog(@"updateBufferingValue: %i of %i", buffer_value, buffer_size);
+    //NSLog(@"updateBufferingValue: %i of %i", buffer_value, buffer_size);
 }
 
 -(void)playingStarted {
@@ -131,7 +135,7 @@
     }
 }
 
-- (IBAction)radioButtonPressed:(id)sender {
+- (IBAction)radioButtonPressed {
     
     if ([self.radioButton.currentImage isEqual:[UIImage imageNamed:@"playbutton.png"]])
 	{
@@ -269,6 +273,21 @@
     }
 }
 
+- (IBAction)showAboutInfo {
+    AboutViewController *controller;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        controller = [[AboutViewController alloc] initWithNibName:@"AboutViewController_IPhone" bundle:nil];
+    } else {
+        controller = [[AboutViewController alloc] initWithNibName:@"AboutViewController_IPad" bundle:nil];
+    }
+	controller.delegate = self;
+	
+	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	[self presentModalViewController:controller animated:YES];
+	
+	[controller release];
+}
+
 //Make sure we can recieve remote control events
 - (BOOL)canBecomeFirstResponder {
     return YES;
@@ -279,10 +298,12 @@
     if (event.type == UIEventTypeRemoteControl) {
         if (event.subtype == UIEventSubtypeRemoteControlPlay) {
             [self.radio resume];
+            [self setButtonImage:[UIImage imageNamed:@"loadingbutton.png"]];
         } else if (event.subtype == UIEventSubtypeRemoteControlPause) {
             [self.radio pause];
+            [self setButtonImage:[UIImage imageNamed:@"playbutton.png"]];
         } else if (event.subtype == UIEventSubtypeRemoteControlTogglePlayPause) {
-            [self.radio togglePlay];
+            [self radioButtonPressed];
         }
     }
 }
