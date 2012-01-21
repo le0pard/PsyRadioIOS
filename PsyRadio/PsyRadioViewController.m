@@ -273,6 +273,14 @@
     }
 }
 
+- (IBAction)qualityChanged {
+    if ([self.radio isPlayed]){
+        [self.radio pause];
+        [self.radio connect:[self getStreamingUrl] withDelegate:self withGain:self.volumeSlider.value withQualityIndex:[self.qualitySelector selectedSegmentIndex] + 1];
+		[self setButtonImage:[UIImage imageNamed:@"loadingbutton.png"]];
+    }
+}
+
 - (IBAction)showAboutInfo {
     AboutViewController *controller;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {

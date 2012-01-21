@@ -18,9 +18,7 @@
 		B3A875A014CAFE6100ADB447 /* sound-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A8759E14CAFE6100ADB447 /* sound-plus.png */; };
 		B3A875A214CAFFAB00ADB447 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A875A114CAFFAB00ADB447 /* logo.png */; };
 		B3A875A414CAFFC500ADB447 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A875A314CAFFC500ADB447 /* logo@2x.png */; };
-		B3DC549114C0E5EB0051D342 /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC549014C0E5EB0051D342 /* AudioStreamer.m */; };
 		B3DC549414C0E6070051D342 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DC549314C0E6070051D342 /* CFNetwork.framework */; };
-		B3DC549714C0E62D0051D342 /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC549614C0E62C0051D342 /* UIDevice+Hardware.m */; };
 		B3DC54B314C1033B0051D342 /* LevelMeterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DC54B214C1033B0051D342 /* LevelMeterView.m */; };
 		B3DC54C814C195880051D342 /* loadingbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54C414C195880051D342 /* loadingbutton.png */; };
 		B3DC54C914C195880051D342 /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54C514C195880051D342 /* pausebutton.png */; };
@@ -51,8 +49,6 @@
 		B3FF77A314CB3066008EF711 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FF77A114CB3066008EF711 /* AboutViewController.m */; };
 		B3FF77A414CB3066008EF711 /* AboutViewController_IPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FF77A214CB3066008EF711 /* AboutViewController_IPad.xib */; };
 		B3FF77AD14CB3151008EF711 /* AboutViewController_IPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FF77AC14CB3151008EF711 /* AboutViewController_IPhone.xib */; };
-		B3FF77B014CB327E008EF711 /* info_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B3FF77AE14CB327E008EF711 /* info_icon.png */; };
-		B3FF77B114CB327E008EF711 /* info_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3FF77AF14CB327E008EF711 /* info_icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,11 +73,7 @@
 		B3A8759E14CAFE6100ADB447 /* sound-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sound-plus.png"; sourceTree = "<group>"; };
 		B3A875A114CAFFAB00ADB447 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		B3A875A314CAFFC500ADB447 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
-		B3DC548F14C0E5EB0051D342 /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioStreamer.h; sourceTree = "<group>"; };
-		B3DC549014C0E5EB0051D342 /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioStreamer.m; sourceTree = "<group>"; };
 		B3DC549314C0E6070051D342 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		B3DC549514C0E62C0051D342 /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
-		B3DC549614C0E62C0051D342 /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
 		B3DC54B114C1033B0051D342 /* LevelMeterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMeterView.h; sourceTree = "<group>"; };
 		B3DC54B214C1033B0051D342 /* LevelMeterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelMeterView.m; sourceTree = "<group>"; };
 		B3DC54C414C195880051D342 /* loadingbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingbutton.png; sourceTree = "<group>"; };
@@ -123,8 +115,6 @@
 		B3FF77A114CB3066008EF711 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		B3FF77A214CB3066008EF711 /* AboutViewController_IPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController_IPad.xib; sourceTree = "<group>"; };
 		B3FF77AC14CB3151008EF711 /* AboutViewController_IPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController_IPhone.xib; sourceTree = "<group>"; };
-		B3FF77AE14CB327E008EF711 /* info_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_icon.png; sourceTree = "<group>"; };
-		B3FF77AF14CB327E008EF711 /* info_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info_icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,17 +144,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B3DC548E14C0E5EB0051D342 /* AudioStreamer */ = {
-			isa = PBXGroup;
-			children = (
-				B3DC549514C0E62C0051D342 /* UIDevice+Hardware.h */,
-				B3DC549614C0E62C0051D342 /* UIDevice+Hardware.m */,
-				B3DC548F14C0E5EB0051D342 /* AudioStreamer.h */,
-				B3DC549014C0E5EB0051D342 /* AudioStreamer.m */,
-			);
-			path = AudioStreamer;
-			sourceTree = "<group>";
-		};
 		B3DC54A014C0FFFE0051D342 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,8 +155,6 @@
 		B3DC54A114C0FFFE0051D342 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				B3FF77AE14CB327E008EF711 /* info_icon.png */,
-				B3FF77AF14CB327E008EF711 /* info_icon@2x.png */,
 				B3A875A314CAFFC500ADB447 /* logo@2x.png */,
 				B3A875A114CAFFAB00ADB447 /* logo.png */,
 				B3A8759D14CAFE6100ADB447 /* sound-minus.png */,
@@ -247,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				B3DC54A714C1014D0051D342 /* AudioView */,
-				B3DC548E14C0E5EB0051D342 /* AudioStreamer */,
 				B3FDA17214BF0A080011E709 /* Radio */,
 				B3FDA14714BF09AA0011E709 /* PsyRadioAppDelegate.h */,
 				B3FDA14814BF09AA0011E709 /* PsyRadioAppDelegate.m */,
@@ -400,8 +376,6 @@
 				B3A875A414CAFFC500ADB447 /* logo@2x.png in Resources */,
 				B3FF77A414CB3066008EF711 /* AboutViewController_IPad.xib in Resources */,
 				B3FF77AD14CB3151008EF711 /* AboutViewController_IPhone.xib in Resources */,
-				B3FF77B014CB327E008EF711 /* info_icon.png in Resources */,
-				B3FF77B114CB327E008EF711 /* info_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,8 +416,6 @@
 				B3FDA17914BF0A080011E709 /* Packet.m in Sources */,
 				B3FDA17A14BF0A080011E709 /* Queue.m in Sources */,
 				B3FDA17B14BF0A080011E709 /* Radio.m in Sources */,
-				B3DC549114C0E5EB0051D342 /* AudioStreamer.m in Sources */,
-				B3DC549714C0E62D0051D342 /* UIDevice+Hardware.m in Sources */,
 				B3DC54B314C1033B0051D342 /* LevelMeterView.m in Sources */,
 				B3FF77A314CB3066008EF711 /* AboutViewController.m in Sources */,
 			);

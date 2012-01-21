@@ -33,6 +33,8 @@
 
 - (IBAction)radioButtonPressed;
 - (IBAction)volumeChanged:(id)sender;
+- (IBAction)qualityChanged;
+
 
 
 -(void)loadMainView;

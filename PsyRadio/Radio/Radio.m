@@ -312,7 +312,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 			if (audioState.outOfBuffers > kMaxOutOfBuffers) {
 				//[self pause];
 				//[NSTimer scheduledTimerWithTimeInterval:20 target:self selector:@selector(resume) userInfo:nil repeats:NO];
-                NSLog(@"OUT OF BUFFERS DONE!!! READ ME");
+                //NSLog(@"OUT OF BUFFERS DONE!!! READ ME");
 				audioState.outOfBuffers = 0;
 			}
 		}
