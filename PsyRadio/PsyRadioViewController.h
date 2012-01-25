@@ -22,6 +22,8 @@
     UISegmentedControl *qualitySelector;
     UILabel *trackTitle;
     UIImageView *logoImage;
+    UIButton *plusSound;
+    UIButton *minusSound;
 }
 
 @property (nonatomic, retain) Radio *radio;
@@ -30,6 +32,8 @@
 @property (nonatomic, retain) IBOutlet UISegmentedControl *qualitySelector;
 @property (nonatomic, retain) IBOutlet UILabel *trackTitle;
 @property (nonatomic, retain) IBOutlet UIImageView *logoImage;
+@property (nonatomic, retain) IBOutlet UIButton *plusSound;
+@property (nonatomic, retain) IBOutlet UIButton *minusSound;
 
 - (IBAction)radioButtonPressed;
 - (IBAction)volumeChanged:(id)sender;
@@ -44,6 +48,7 @@
 -(void)updateBuffering:(BOOL)value;
 -(void)updateBufferingValue:(int)buffer_value withBufferSize:(int)buffer_size;
 -(void)playingStarted;
+-(IBAction)changeVolume:(UIButton*)sender;
 
 - (IBAction)showAboutInfo;
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3344A0B14D0842800427C12 /* catware_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B3344A0914D0842800427C12 /* catware_logo.png */; };
+		B3344A0C14D0842800427C12 /* catware_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3344A0A14D0842800427C12 /* catware_logo@2x.png */; };
 		B3A8757814CAF80600ADB447 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A8757614CAF80600ADB447 /* icon.png */; };
 		B3A8758014CAF86500ADB447 /* icon_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A8757F14CAF86500ADB447 /* icon_ipad.png */; };
 		B3A8758D14CAF96000ADB447 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A8758A14CAF96000ADB447 /* Default.png */; };
@@ -18,7 +20,6 @@
 		B3A875A014CAFE6100ADB447 /* sound-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A8759E14CAFE6100ADB447 /* sound-plus.png */; };
 		B3A875A214CAFFAB00ADB447 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A875A114CAFFAB00ADB447 /* logo.png */; };
 		B3A875A414CAFFC500ADB447 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A875A314CAFFC500ADB447 /* logo@2x.png */; };
-		B3DC549414C0E6070051D342 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DC549314C0E6070051D342 /* CFNetwork.framework */; };
 		B3DC54C814C195880051D342 /* loadingbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54C414C195880051D342 /* loadingbutton.png */; };
 		B3DC54C914C195880051D342 /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54C514C195880051D342 /* pausebutton.png */; };
 		B3DC54CA14C195880051D342 /* playbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54C614C195880051D342 /* playbutton.png */; };
@@ -71,6 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B3344A0914D0842800427C12 /* catware_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catware_logo.png; sourceTree = "<group>"; };
+		B3344A0A14D0842800427C12 /* catware_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catware_logo@2x.png"; sourceTree = "<group>"; };
 		B3A8757614CAF80600ADB447 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		B3A8757F14CAF86500ADB447 /* icon_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_ipad.png; sourceTree = "<group>"; };
 		B3A8758A14CAF96000ADB447 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -140,7 +143,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3DC54D214C196F80051D342 /* QuartzCore.framework in Frameworks */,
-				B3DC549414C0E6070051D342 /* CFNetwork.framework in Frameworks */,
 				B3FDA17114BF09D40011E709 /* AudioToolbox.framework in Frameworks */,
 				B3FDA13914BF09A90011E709 /* UIKit.framework in Frameworks */,
 				B3FDA13B14BF09A90011E709 /* Foundation.framework in Frameworks */,
@@ -172,6 +174,8 @@
 		B3DC54A114C0FFFE0051D342 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B3344A0914D0842800427C12 /* catware_logo.png */,
+				B3344A0A14D0842800427C12 /* catware_logo@2x.png */,
 				B3F4A38C14D0506E0067061F /* sound-minus@2x.png */,
 				B3F4A38D14D0506E0067061F /* sound-plus@2x.png */,
 				B3F4A38A14D0502A0067061F /* thumb@2x.png */,
@@ -403,6 +407,8 @@
 				B3F4A38B14D0502A0067061F /* thumb@2x.png in Resources */,
 				B3F4A38E14D0506E0067061F /* sound-minus@2x.png in Resources */,
 				B3F4A38F14D0506E0067061F /* sound-plus@2x.png in Resources */,
+				B3344A0B14D0842800427C12 /* catware_logo.png in Resources */,
+				B3344A0C14D0842800427C12 /* catware_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

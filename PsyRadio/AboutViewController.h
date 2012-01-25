@@ -12,9 +12,11 @@
 
 @interface AboutViewController : UIViewController {
     id <AboutViewControllerDelegate> delegate;
+    UIImageView *logoImage;
 }
 
 @property (assign) id <AboutViewControllerDelegate> delegate;
+@property (nonatomic, retain) IBOutlet UIImageView *logoImage;
 
 - (IBAction)done;
 

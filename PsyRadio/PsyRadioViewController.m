@@ -18,6 +18,8 @@
 @synthesize qualitySelector = _qualitySelector;
 @synthesize trackTitle = _trackTitle;
 @synthesize logoImage = _logoImage;
+@synthesize plusSound = _plusSound;
+@synthesize minusSound = _minusSound;
 
 
 - (void)aboutViewControllerDidFinish:(AboutViewController *)controller {
@@ -158,6 +160,23 @@
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+
+-(IBAction)changeVolume:(UIButton*)sender {
+    if (1 == [sender tag]){
+        float val = self.volumeSlider.value + 0.1;
+        if (val > 1){
+            val = 1;
+        }
+        [self.volumeSlider setValue:val animated:YES];
+    } else {
+        float val = self.volumeSlider.value - 0.1;
+        if (val < 0){
+            val = 0;
+        }
+        [self.volumeSlider setValue:val animated:YES];
+    }
+    [self.radio updateGain:self.volumeSlider.value];
 }
 
 #pragma mark - View lifecycle
@@ -336,6 +355,8 @@
     [_qualitySelector release];
     [_trackTitle release];
     [_logoImage release];
+    [_plusSound release];
+    [_minusSound release];
     [super dealloc];
 }
 
