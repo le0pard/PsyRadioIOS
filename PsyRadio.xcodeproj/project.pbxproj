@@ -27,6 +27,16 @@
 		B3DC54FC14C1AA810051D342 /* slider_maximum.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54F914C1AA810051D342 /* slider_maximum.png */; };
 		B3DC54FD14C1AA810051D342 /* slider_minimum.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54FA14C1AA810051D342 /* slider_minimum.png */; };
 		B3DC54FE14C1AA810051D342 /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B3DC54FB14C1AA810051D342 /* thumb.png */; };
+		B3F4A37C14D03BED0067061F /* button_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F4A37B14D03BED0067061F /* button_bg.png */; };
+		B3F4A38414D04FFC0067061F /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F4A37E14D04FFC0067061F /* Default-Landscape~ipad.png */; };
+		B3F4A38514D04FFC0067061F /* loadingbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F4A37F14D04FFC0067061F /* loadingbutton@2x.png */; };
+		B3F4A38614D04FFC0067061F /* pausebutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F4A38014D04FFC0067061F /* pausebutton@2x.png */; };
+		B3F4A38714D04FFC0067061F /* playbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F4A38114D04FFC0067061F /* playbutton@2x.png */; };
+		B3F4A38814D04FFC0067061F /* slider_maximum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F4A38214D04FFC0067061F /* slider_maximum@2x.png */; };
+		B3F4A38914D04FFC0067061F /* slider_minimum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F4A38314D04FFC0067061F /* slider_minimum@2x.png */; };
+		B3F4A38B14D0502A0067061F /* thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F4A38A14D0502A0067061F /* thumb@2x.png */; };
+		B3F4A38E14D0506E0067061F /* sound-minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F4A38C14D0506E0067061F /* sound-minus@2x.png */; };
+		B3F4A38F14D0506E0067061F /* sound-plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F4A38D14D0506E0067061F /* sound-plus@2x.png */; };
 		B3FDA13914BF09A90011E709 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13814BF09A90011E709 /* UIKit.framework */; };
 		B3FDA13B14BF09A90011E709 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13A14BF09A90011E709 /* Foundation.framework */; };
 		B3FDA13D14BF09A90011E709 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FDA13C14BF09A90011E709 /* CoreGraphics.framework */; };
@@ -81,6 +91,16 @@
 		B3DC54F914C1AA810051D342 /* slider_maximum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_maximum.png; sourceTree = "<group>"; };
 		B3DC54FA14C1AA810051D342 /* slider_minimum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_minimum.png; sourceTree = "<group>"; };
 		B3DC54FB14C1AA810051D342 /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb.png; sourceTree = "<group>"; };
+		B3F4A37B14D03BED0067061F /* button_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_bg.png; sourceTree = "<group>"; };
+		B3F4A37E14D04FFC0067061F /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		B3F4A37F14D04FFC0067061F /* loadingbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loadingbutton@2x.png"; sourceTree = "<group>"; };
+		B3F4A38014D04FFC0067061F /* pausebutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pausebutton@2x.png"; sourceTree = "<group>"; };
+		B3F4A38114D04FFC0067061F /* playbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playbutton@2x.png"; sourceTree = "<group>"; };
+		B3F4A38214D04FFC0067061F /* slider_maximum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_maximum@2x.png"; sourceTree = "<group>"; };
+		B3F4A38314D04FFC0067061F /* slider_minimum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_minimum@2x.png"; sourceTree = "<group>"; };
+		B3F4A38A14D0502A0067061F /* thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb@2x.png"; sourceTree = "<group>"; };
+		B3F4A38C14D0506E0067061F /* sound-minus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sound-minus@2x.png"; sourceTree = "<group>"; };
+		B3F4A38D14D0506E0067061F /* sound-plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sound-plus@2x.png"; sourceTree = "<group>"; };
 		B3FDA13414BF09A90011E709 /* PsyRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsyRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FDA13814BF09A90011E709 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3FDA13A14BF09A90011E709 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -152,6 +172,16 @@
 		B3DC54A114C0FFFE0051D342 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B3F4A38C14D0506E0067061F /* sound-minus@2x.png */,
+				B3F4A38D14D0506E0067061F /* sound-plus@2x.png */,
+				B3F4A38A14D0502A0067061F /* thumb@2x.png */,
+				B3F4A37E14D04FFC0067061F /* Default-Landscape~ipad.png */,
+				B3F4A37F14D04FFC0067061F /* loadingbutton@2x.png */,
+				B3F4A38014D04FFC0067061F /* pausebutton@2x.png */,
+				B3F4A38114D04FFC0067061F /* playbutton@2x.png */,
+				B3F4A38214D04FFC0067061F /* slider_maximum@2x.png */,
+				B3F4A38314D04FFC0067061F /* slider_minimum@2x.png */,
+				B3F4A37B14D03BED0067061F /* button_bg.png */,
 				B3A875A314CAFFC500ADB447 /* logo@2x.png */,
 				B3A875A114CAFFAB00ADB447 /* logo.png */,
 				B3A8759D14CAFE6100ADB447 /* sound-minus.png */,
@@ -363,6 +393,16 @@
 				B3A875A414CAFFC500ADB447 /* logo@2x.png in Resources */,
 				B3FF77A414CB3066008EF711 /* AboutViewController_IPad.xib in Resources */,
 				B3FF77AD14CB3151008EF711 /* AboutViewController_IPhone.xib in Resources */,
+				B3F4A37C14D03BED0067061F /* button_bg.png in Resources */,
+				B3F4A38414D04FFC0067061F /* Default-Landscape~ipad.png in Resources */,
+				B3F4A38514D04FFC0067061F /* loadingbutton@2x.png in Resources */,
+				B3F4A38614D04FFC0067061F /* pausebutton@2x.png in Resources */,
+				B3F4A38714D04FFC0067061F /* playbutton@2x.png in Resources */,
+				B3F4A38814D04FFC0067061F /* slider_maximum@2x.png in Resources */,
+				B3F4A38914D04FFC0067061F /* slider_minimum@2x.png in Resources */,
+				B3F4A38B14D0502A0067061F /* thumb@2x.png in Resources */,
+				B3F4A38E14D0506E0067061F /* sound-minus@2x.png in Resources */,
+				B3F4A38F14D0506E0067061F /* sound-plus@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

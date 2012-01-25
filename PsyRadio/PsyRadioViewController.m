@@ -257,21 +257,21 @@
     switch (toInterfaceOrientation) {
         case UIInterfaceOrientationLandscapeLeft:
         case UIInterfaceOrientationLandscapeRight:
-            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                self.logoImage.frame =  CGRectMake(120, 5, 80, 80);
-            } else {
-                self.logoImage.frame =  CGRectMake(240, 20, 300, 300);
-            }
+            self.logoImage.hidden = YES;
             break;
         default:
+            self.logoImage.hidden = NO;
+            int size = 150;
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                self.logoImage.frame =  CGRectMake(160, 10, 150, 150);
+                size = 150;
             } else {
-                self.logoImage.frame =  CGRectMake(240, 20, 505, 505);
+                size = 300;
             }
+            self.logoImage.frame =  CGRectMake(([self view].bounds.size.width / 2) - (size / 2), 10, size, size);
             break;
     }
 }
+
 
 - (IBAction)qualityChanged {
     if ([self.radio isPlayed]){
