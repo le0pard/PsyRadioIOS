@@ -112,6 +112,13 @@
 
 -(void)updateBuffering:(BOOL)value {
 	// update buffer indicator
+    if (!value){
+        if ([self.radio isPlayed]){
+            [self playingStarted];
+        } else {
+            [self setButtonImage:[UIImage imageNamed:@"playbutton.png"]];
+        }
+    }
     //NSLog(@"updateBuffering: %@", (value ? @"YES" : @"NO"));
 }
 
@@ -201,31 +208,6 @@
     [self.volumeSlider setMaximumTrackImage:maxImage forState:UIControlStateNormal];
     [self.volumeSlider setMinimumTrackImage:minImage forState:UIControlStateNormal];
     [self.volumeSlider setThumbImage:thumbImage forState:UIControlStateNormal];
-    
-    //sengemnt control
-    /*
-    UIImage *segmentSelected = NULL;
-    UIImage *segmentUnselected = NULL;
-    if ([[UIImage class] respondsToSelector:@selector(resizableImageWithCapInsets)]) {
-        segmentSelected = [[UIImage imageNamed:@"segcontrol_sel.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
-        segmentUnselected = [[UIImage imageNamed:@"segcontrol_uns.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
-    } else {
-        segmentSelected = [[UIImage imageNamed:@"segcontrol_sel.png"] stretchableImageWithLeftCapWidth:15.0 topCapHeight:15.0];
-        segmentUnselected = [[UIImage imageNamed:@"segcontrol_uns.png"] stretchableImageWithLeftCapWidth:15.0 topCapHeight:15.0];
-    }
-    UIImage *segmentSelectedUnselected = [UIImage imageNamed:@"segcontrol_sel-uns.png"];
-    UIImage *segUnselectedSelected = [UIImage imageNamed:@"segcontrol_uns-sel.png"];
-    UIImage *segmentUnselectedUnselected = [UIImage imageNamed:@"segcontrol_uns-uns.png"];
-    
-    if ([self.qualitySelector respondsToSelector:@selector(setBackgroundImage:forState:barMetrics:)]){
-        [self.qualitySelector setBackgroundImage:segmentUnselected forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        [self.qualitySelector setBackgroundImage:segmentSelected forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    
-        [self.qualitySelector setDividerImage:segmentUnselectedUnselected forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        [self.qualitySelector setDividerImage:segmentSelectedUnselected forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        [self.qualitySelector setDividerImage:segUnselectedSelected forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    }
-     */
 }
 
 - (void)viewDidLoad
