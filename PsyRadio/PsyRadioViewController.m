@@ -24,6 +24,8 @@
 
 - (void)aboutViewControllerDidFinish:(AboutViewController *)controller {
 	[self dismissModalViewControllerAnimated:YES];
+    // rotation
+    [self logoInOrientation:self.interfaceOrientation];
 }
 
 //
@@ -56,35 +58,6 @@
 	[CATransaction commit];
 }
 
-//
-// setButtonImage:
-//
-// Used to change the image on the playbutton. This method exists for
-// the purpose of inter-thread invocation because
-// the observeValueForKeyPath:ofObject:change:context: method is invoked
-// from secondary threads and UI updates are only permitted on the main thread.
-//
-// Parameters:
-//    image - the image to set on the play button.
-//
-- (void)setButtonImage:(UIImage *)image
-{
-	[self.radioButton.layer removeAllAnimations];
-	if (!image)
-	{
-		[self.radioButton setImage:[UIImage imageNamed:@"playbutton.png"] forState:0];
-	}
-	else
-	{
-		[self.radioButton setImage:image forState:0];
-        
-		if ([self.radioButton.currentImage isEqual:[UIImage imageNamed:@"loadingbutton.png"]])
-		{
-			[self spinButton];
-		}
-	}
-}
-
 
 /* radio */
 -(void)loadMainView {
@@ -112,13 +85,6 @@
 
 -(void)updateBuffering:(BOOL)value {
 	// update buffer indicator
-    if (!value){
-        if ([self.radio isPlayed]){
-            [self playingStarted];
-        } else {
-            [self setButtonImage:[UIImage imageNamed:@"playbutton.png"]];
-        }
-    }
     //NSLog(@"updateBuffering: %@", (value ? @"YES" : @"NO"));
 }
 
@@ -127,8 +93,37 @@
     //NSLog(@"updateBufferingValue: %i of %i", buffer_value, buffer_size);
 }
 
--(void)playingStarted {
-    [self setButtonImage:[UIImage imageNamed:@"pausebutton.png"]];
+-(void)plaingChanged:(int)state {
+    switch (state) {
+        // stop/pause
+        case 0:
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                [self.radioButton setImage:[UIImage imageNamed:@"playbutton.png"] forState:0];
+            } else {
+                [self.radioButton setImage:[UIImage imageNamed:@"playbutton@2x.png"] forState:0];
+            }
+            break;
+        // loading
+        case 1:
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                [self.radioButton setImage:[UIImage imageNamed:@"loadingbutton.png"] forState:0];
+            } else {
+                [self.radioButton setImage:[UIImage imageNamed:@"loadingbutton@2x.png"] forState:0];
+            }
+            [self spinButton];
+            break; 
+        // play
+        case 2:
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                [self.radioButton setImage:[UIImage imageNamed:@"pausebutton.png"] forState:0];
+            } else {
+                [self.radioButton setImage:[UIImage imageNamed:@"pausebutton@2x.png"] forState:0];
+            }
+            break;
+        default:
+            break;
+    }
+    
 }
 
 - (NSString *)getStreamingUrl {
@@ -146,14 +141,12 @@
 
 - (IBAction)radioButtonPressed {
     
-    if ([self.radioButton.currentImage isEqual:[UIImage imageNamed:@"playbutton.png"]])
+    if (![self.radio isPlayed])
 	{
 		[self.radio connect:[self getStreamingUrl] withDelegate:self withGain:self.volumeSlider.value withQualityIndex:[self.qualitySelector selectedSegmentIndex] + 1];
-		[self setButtonImage:[UIImage imageNamed:@"loadingbutton.png"]];
 	}
 	else
 	{
-        [self setButtonImage:[UIImage imageNamed:@"playbutton.png"]];
 		[self.radio pause];
 	}
 }
@@ -188,7 +181,28 @@
 
 #pragma mark - View lifecycle
 
+- (void)logoInOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+    switch (toInterfaceOrientation) {
+        case UIInterfaceOrientationLandscapeLeft:
+        case UIInterfaceOrientationLandscapeRight:
+            self.logoImage.hidden = YES;
+            break;
+        default:
+            self.logoImage.hidden = NO;
+            int size = 150;
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                size = 150;
+            } else {
+                size = 300;
+            }
+            self.logoImage.frame =  CGRectMake(([self view].bounds.size.width / 2) - (size / 2), 10, size, size);
+            break;
+    }
+}
+
 - (void)setupIntrface {
+    // rotation
+    [self logoInOrientation:self.interfaceOrientation];
     //background
     [[self view] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_sand.png"]]];
     self.trackTitle.textAlignment = UITextAlignmentCenter;
@@ -196,14 +210,29 @@
     //slider
     UIImage *minImage = NULL;
     UIImage *maxImage = NULL;
+    UIImage *thumbImage = NULL;
     if ([[UIImage class] respondsToSelector:@selector(resizableImageWithCapInsets)]) {
-        minImage = [[UIImage imageNamed:@"slider_minimum.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
-        maxImage = [[UIImage imageNamed:@"slider_maximum.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            minImage = [[UIImage imageNamed:@"slider_minimum.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+            maxImage = [[UIImage imageNamed:@"slider_maximum.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+        } else {
+            minImage = [[UIImage imageNamed:@"slider_minimum@2x.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+            maxImage = [[UIImage imageNamed:@"slider_maximum@2x.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+        }
     } else {
-        minImage = [[UIImage imageNamed:@"slider_minimum.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
-        maxImage = [[UIImage imageNamed:@"slider_maximum.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            minImage = [[UIImage imageNamed:@"slider_minimum.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+            maxImage = [[UIImage imageNamed:@"slider_maximum.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+        } else {
+            minImage = [[UIImage imageNamed:@"slider_minimum@2x.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+            maxImage = [[UIImage imageNamed:@"slider_maximum@2x.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+        }
     }
-    UIImage *thumbImage = [UIImage imageNamed:@"thumb.png"];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        thumbImage = [UIImage imageNamed:@"thumb.png"];
+    } else {
+        thumbImage = [UIImage imageNamed:@"thumb@2x.png"];
+    }
 
     [self.volumeSlider setMaximumTrackImage:maxImage forState:UIControlStateNormal];
     [self.volumeSlider setMinimumTrackImage:minImage forState:UIControlStateNormal];
@@ -255,22 +284,8 @@
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    switch (toInterfaceOrientation) {
-        case UIInterfaceOrientationLandscapeLeft:
-        case UIInterfaceOrientationLandscapeRight:
-            self.logoImage.hidden = YES;
-            break;
-        default:
-            self.logoImage.hidden = NO;
-            int size = 150;
-            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                size = 150;
-            } else {
-                size = 300;
-            }
-            self.logoImage.frame =  CGRectMake(([self view].bounds.size.width / 2) - (size / 2), 10, size, size);
-            break;
-    }
+    //logo
+    [self logoInOrientation:toInterfaceOrientation];
 }
 
 
@@ -278,7 +293,6 @@
     if ([self.radio isPlayed]){
         [self.radio pause];
         [self.radio connect:[self getStreamingUrl] withDelegate:self withGain:self.volumeSlider.value withQualityIndex:[self.qualitySelector selectedSegmentIndex] + 1];
-		[self setButtonImage:[UIImage imageNamed:@"loadingbutton.png"]];
     }
 }
 
@@ -307,10 +321,8 @@
     if (event.type == UIEventTypeRemoteControl) {
         if (event.subtype == UIEventSubtypeRemoteControlPlay) {
             [self.radio resume];
-            [self setButtonImage:[UIImage imageNamed:@"loadingbutton.png"]];
         } else if (event.subtype == UIEventSubtypeRemoteControlPause) {
             [self.radio pause];
-            [self setButtonImage:[UIImage imageNamed:@"playbutton.png"]];
         } else if (event.subtype == UIEventSubtypeRemoteControlTogglePlayPause) {
             [self radioButtonPressed];
         }
@@ -319,14 +331,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    /*
-    // Return YES for supported orientations
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation == UIInterfaceOrientationPortrait);
-    } else {
-        return YES;
-    }
-     */
     return YES;
 }
 

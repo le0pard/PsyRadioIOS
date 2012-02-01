@@ -139,7 +139,7 @@ static void PacketsProc(void *inClientData,
 			audioQueueCallBack(inClientData, audioState->mQueue, audioState->mBuffers[i]);
 		}
 		//NSLog(@"STARTING THE QUEUE");
-        [audioState->appDelegate playingStarted];
+        [audioState->appDelegate plaingChanged:2];
 		AudioQueueSetParameter(audioState->mQueue, kAudioQueueParam_Volume, audioState->currentGain);
 		AudioQueueStart(audioState->mQueue, NULL);
 		audioState->started = YES;
@@ -212,6 +212,8 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 		[conn cancel];
 		[conn release];
 	}
+    playing = YES;
+    [appDelegate plaingChanged:1];
 	NSURL *u = [NSURL URLWithString: loc];
 	NSLog(@"URL = %@", u);
 	NSMutableURLRequest *req = [[NSMutableURLRequest alloc] initWithURL:u];
@@ -233,6 +235,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 }
 
 -(void)pause {
+    playing = NO;
 	NSLog(@"pause");
 	Queue *queue = audioState.packetQueue;
 	@synchronized (queue) {
@@ -258,34 +261,35 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 			}
 			AudioSessionSetActive(false);
 			[appDelegate updateBuffering:NO];
+            [appDelegate plaingChanged:0];
 		}
 	}
 }
 
 -(void)resume {
+    playing = YES;
 	NSLog(@"resume");
 	if (!audioState.started) {
 		audioState.paused = NO;
 		[self connect:url withDelegate:appDelegate withGain:audioState.currentGain];
 		buffering = YES;
 		[appDelegate updateBuffering:YES];
+        [appDelegate plaingChanged:1];
 	}
 }
 
 -(void)updatePlay: (BOOL)play {
-	NSLog(@"updatePlay %d", play);
+	//NSLog(@"updatePlay %d", play);
 	if (!play) {
-		playing = NO;
 		[self pause];
 	}
 	else {
-		playing = YES;
 		[self resume];
 	}
 }
 
 -(void)togglePlay {
-    if (audioState.started) {
+    if (playing) {
         [self updatePlay:NO];
     } else {
         [self updatePlay:YES];
@@ -293,7 +297,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 }
 
 -(BOOL)isPlayed {
-    return audioState.started;
+    return playing;
 }
 
 -(void) processAudio: (const char*)buffer withLength:(int)length {
@@ -387,19 +391,20 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 }
 
 -(void)reconnect {
-	NSLog(@"Attempting to reconnect");
-	[self connect:url withDelegate:appDelegate withGain:audioState.currentGain];
-	
 	attemptCount++;
 	NSLog(@"attemptCount = %u", attemptCount);
-	if (attemptCount == 3)
+	if (attemptCount >= 3)
 	{
 		alert = [[UIAlertView alloc] initWithTitle:@"Unable To Play" message:@"We can't seem to play Radio at this moment. Please check your internet connection on your device and make sure you are either on a 3G or WiFi connection." 
 										  delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
 		attemptCount = 0;
         [self pause];
-	}
+        [appDelegate plaingChanged:0];
+	} else {
+        NSLog(@"Attempting to reconnect");
+        [self connect:url withDelegate:appDelegate withGain:audioState.currentGain];
+    }
 }
 
 -(void)alertViewCancel:(UIAlertView *)alertView
@@ -429,7 +434,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 
 - (id)init {
 	if (self = [super init]) {
-		playing = YES;
+		playing = NO;
 		AudioSessionInitialize (NULL, NULL, interruptionListenerCallback, self);
 	}
 	return self;

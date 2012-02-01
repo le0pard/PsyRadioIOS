@@ -177,7 +177,7 @@
 					<object class="IBUIImageView" id="156053782">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{60, 396}, {200, 35}}</string>
+						<string key="NSFrame">{{85, 396}, {150, 35}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -374,8 +374,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="catware_logo.png">{200, 35}</string>
-			<string key="logo.png">{301, 298}</string>
+			<string key="catware_logo.png">{150, 35}</string>
+			<string key="logo.png">{150, 150}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">933</string>
 	</data>

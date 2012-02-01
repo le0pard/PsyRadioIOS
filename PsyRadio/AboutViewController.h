@@ -24,6 +24,7 @@
 
 @protocol AboutViewControllerDelegate
 
+- (void)logoInOrientation:(UIInterfaceOrientation)toInterfaceOrientation;
 - (void)aboutViewControllerDidFinish:(AboutViewController *)controller;
 
 @end

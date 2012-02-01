@@ -136,7 +136,7 @@
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">logo.png</string>
+							<string key="NSResourceName">logo@2x.png</string>
 						</object>
 					</object>
 					<object class="IBUILabel" id="657650897">
@@ -164,7 +164,7 @@
 					<object class="IBUIImageView" id="705231854">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{184, 895}, {400, 70}}</string>
+						<string key="NSFrame">{{234, 895}, {300, 70}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -173,7 +173,7 @@
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">catware_logo.png</string>
+							<string key="NSResourceName">catware_logo@2x.png</string>
 						</object>
 					</object>
 				</array>
@@ -362,8 +362,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="catware_logo.png">{200, 35}</string>
-			<string key="logo.png">{301, 298}</string>
+			<string key="catware_logo@2x.png">{300, 70}</string>
+			<string key="logo@2x.png">{300, 300}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">933</string>
 	</data>

@@ -42,7 +42,7 @@
 					<object class="IBUIImageView" id="890320042">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{286, 556}, {200, 200}}</string>
+						<string key="NSFrame">{{274, 544}, {220, 224}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="273909754"/>
@@ -51,16 +51,16 @@
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">button_bg.png</string>
+							<string key="NSResourceName">button_bg@2x.png</string>
 						</object>
 					</object>
 					<object class="IBUIButton" id="273909754">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{311, 581}, {150, 150}}</string>
+						<string key="NSFrame">{{314, 586}, {140, 140}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="102557753"/>
+						<reference key="NSNextKeyView" ref="92603428"/>
 						<string key="NSReuseIdentifierKey">_NS:241</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -80,7 +80,7 @@
 						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">playbutton.png</string>
+							<string key="NSResourceName">playbutton@2x.png</string>
 						</object>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">2</int>
@@ -95,7 +95,7 @@
 					<object class="IBUILabel" id="643240268">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">266</int>
-						<string key="NSFrame">{{59, 352}, {674, 190}}</string>
+						<string key="NSFrame">{{20, 352}, {713, 190}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="890320042"/>
@@ -131,10 +131,10 @@
 					<object class="IBUISlider" id="185138918">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">266</int>
-						<string key="NSFrame">{{57, 844}, {659, 23}}</string>
+						<string key="NSFrame">{{76, 844}, {616, 23}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="545647466"/>
 						<string key="NSReuseIdentifierKey">_NS:623</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -180,21 +180,6 @@
 							<reference ref="4"/>
 						</array>
 					</object>
-					<object class="IBUIImageView" id="102557753">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{326, 596}, {120, 120}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
-						<string key="NSReuseIdentifierKey">_NS:567</string>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">buttonshadow.png</string>
-						</object>
-					</object>
 					<object class="IBUIImageView" id="1024822216">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">301</int>
@@ -207,7 +192,7 @@
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">logo.png</string>
+							<string key="NSResourceName">logo@2x.png</string>
 						</object>
 					</object>
 					<object class="IBUIButton" id="345871397">
@@ -243,9 +228,10 @@
 					<object class="IBUIButton" id="92603428">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{20, 842}, {25, 25}}</string>
+						<string key="NSFrame">{{20, 830}, {50, 50}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="185138918"/>
 						<string key="NSReuseIdentifierKey">_NS:225</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -259,7 +245,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="897938483"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">sound-minus.png</string>
+							<string key="NSResourceName">sound-minus@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="469844503"/>
 						<reference key="IBUIFont" ref="962686190"/>
@@ -267,9 +253,10 @@
 					<object class="IBUIButton" id="545647466">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">265</int>
-						<string key="NSFrame">{{723, 842}, {25, 25}}</string>
+						<string key="NSFrame">{{698, 830}, {50, 50}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="479137663"/>
 						<string key="NSReuseIdentifierKey">_NS:225</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<int key="IBUITag">1</int>
@@ -284,7 +271,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="897938483"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">sound-plus.png</string>
+							<string key="NSResourceName">sound-plus@2x.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="469844503"/>
 						<reference key="IBUIFont" ref="962686190"/>
@@ -452,15 +439,14 @@
 						<reference key="object" ref="766721923"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="479137663"/>
-							<reference ref="185138918"/>
 							<reference ref="345871397"/>
 							<reference ref="643240268"/>
+							<reference ref="1024822216"/>
 							<reference ref="273909754"/>
 							<reference ref="890320042"/>
-							<reference ref="102557753"/>
-							<reference ref="1024822216"/>
 							<reference ref="92603428"/>
 							<reference ref="545647466"/>
+							<reference ref="185138918"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -482,11 +468,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">10</int>
 						<reference key="object" ref="479137663"/>
-						<reference key="parent" ref="766721923"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">16</int>
-						<reference key="object" ref="102557753"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -523,7 +504,6 @@
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<integer value="1" key="10.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
-				<string key="16.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="17.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -625,12 +605,11 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="button_bg.png">{250, 249}</string>
-			<string key="buttonshadow.png">{115, 115}</string>
-			<string key="logo.png">{301, 298}</string>
-			<string key="playbutton.png">{115, 115}</string>
-			<string key="sound-minus.png">{8, 13}</string>
-			<string key="sound-plus.png">{15, 13}</string>
+			<string key="button_bg@2x.png">{240, 240}</string>
+			<string key="logo@2x.png">{300, 300}</string>
+			<string key="playbutton@2x.png">{140, 140}</string>
+			<string key="sound-minus@2x.png">{50, 50}</string>
+			<string key="sound-plus@2x.png">{60, 50}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">933</string>
 	</data>

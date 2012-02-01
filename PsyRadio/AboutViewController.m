@@ -35,8 +35,7 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+- (void)logoInOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
     switch (toInterfaceOrientation) {
         case UIInterfaceOrientationLandscapeLeft:
         case UIInterfaceOrientationLandscapeRight:
@@ -52,12 +51,21 @@
     }
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    //logo
+    [self logoInOrientation:toInterfaceOrientation];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    // rotation
+    [self logoInOrientation:self.interfaceOrientation];
+    // bg
     [[self view] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_sand.png"]]];
 }
 

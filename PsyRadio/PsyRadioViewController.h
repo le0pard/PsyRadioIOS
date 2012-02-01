@@ -40,14 +40,14 @@
 - (IBAction)qualityChanged;
 
 
-
+-(void)logoInOrientation:(UIInterfaceOrientation)toInterfaceOrientation;
 -(void)loadMainView;
 -(void)updateTitle:(NSString*)title;
 -(void)updateGain:(float)value;
 -(void)updatePlay:(BOOL)play;
 -(void)updateBuffering:(BOOL)value;
 -(void)updateBufferingValue:(int)buffer_value withBufferSize:(int)buffer_size;
--(void)playingStarted;
+-(void)plaingChanged:(int)state;
 -(IBAction)changeVolume:(UIButton*)sender;
 
 - (IBAction)showAboutInfo;
