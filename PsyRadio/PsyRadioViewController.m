@@ -216,22 +216,22 @@
             minImage = [[UIImage imageNamed:@"slider_minimum.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
             maxImage = [[UIImage imageNamed:@"slider_maximum.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
         } else {
-            minImage = [[UIImage imageNamed:@"slider_minimum@2x.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
-            maxImage = [[UIImage imageNamed:@"slider_maximum@2x.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+            minImage = [[UIImage imageNamed:@"slider_minimum-IPad.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+            maxImage = [[UIImage imageNamed:@"slider_maximum-IPad.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
         }
     } else {
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             minImage = [[UIImage imageNamed:@"slider_minimum.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
             maxImage = [[UIImage imageNamed:@"slider_maximum.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
         } else {
-            minImage = [[UIImage imageNamed:@"slider_minimum@2x.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
-            maxImage = [[UIImage imageNamed:@"slider_maximum@2x.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+            minImage = [[UIImage imageNamed:@"slider_minimum-IPad.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+            maxImage = [[UIImage imageNamed:@"slider_maximum-IPad.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
         }
     }
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         thumbImage = [UIImage imageNamed:@"thumb.png"];
     } else {
-        thumbImage = [UIImage imageNamed:@"thumb@2x.png"];
+        thumbImage = [UIImage imageNamed:@"thumb-IPad.png"];
     }
 
     [self.volumeSlider setMaximumTrackImage:maxImage forState:UIControlStateNormal];
