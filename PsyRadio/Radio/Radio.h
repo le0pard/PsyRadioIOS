@@ -60,6 +60,7 @@ typedef struct {
 	int alreadyLoaded;
 	BOOL buffering;
 	BOOL playing;
+    BOOL is_playing;
 	int attemptCount;
 	UIAlertView *alert;
 	PsyRadioViewController *appDelegate;

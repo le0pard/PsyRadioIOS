@@ -147,7 +147,7 @@
 	}
 	else
 	{
-		[self.radio pause];
+		[self.radio updatePlay:NO];
 	}
 }
 
@@ -291,7 +291,7 @@
 
 - (IBAction)qualityChanged {
     if ([self.radio isPlayed]){
-        [self.radio pause];
+        [self.radio updatePlay:NO];
         [self.radio connect:[self getStreamingUrl] withDelegate:self withGain:self.volumeSlider.value withQualityIndex:[self.qualitySelector selectedSegmentIndex] + 1];
     }
 }
@@ -320,9 +320,9 @@
     //if it is a remote control event handle it correctly
     if (event.type == UIEventTypeRemoteControl) {
         if (event.subtype == UIEventSubtypeRemoteControlPlay) {
-            [self.radio resume];
+            [self.radio updatePlay:YES];
         } else if (event.subtype == UIEventSubtypeRemoteControlPause) {
-            [self.radio pause];
+            [self.radio updatePlay:NO];
         } else if (event.subtype == UIEventSubtypeRemoteControlTogglePlayPause) {
             [self radioButtonPressed];
         }

@@ -163,7 +163,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 		[radio pause];
 		NSLog(@"kAudioSessionBeginInterruption");
 	}
-	else if (interruptionState == kAudioSessionEndInterruption && radio->playing) {
+	else if (interruptionState == kAudioSessionEndInterruption && radio->is_playing) {
 		[radio resume];
 		NSLog(@"kAudioSessionEndInterruption");
 	}
@@ -213,6 +213,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 		[conn release];
 	}
     playing = YES;
+    is_playing = YES;
     [appDelegate plaingChanged:1];
 	NSURL *u = [NSURL URLWithString: loc];
 	NSLog(@"URL = %@", u);
@@ -281,9 +282,11 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 -(void)updatePlay: (BOOL)play {
 	//NSLog(@"updatePlay %d", play);
 	if (!play) {
+        is_playing = NO;
 		[self pause];
 	}
 	else {
+        is_playing = YES;
 		[self resume];
 	}
 }
@@ -435,6 +438,7 @@ void interruptionListenerCallback (void	*inUserData, UInt32 interruptionState) {
 - (id)init {
 	if (self = [super init]) {
 		playing = NO;
+        is_playing = NO;
 		AudioSessionInitialize (NULL, NULL, interruptionListenerCallback, self);
 	}
 	return self;
