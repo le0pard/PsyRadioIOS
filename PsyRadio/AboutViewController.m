@@ -13,6 +13,7 @@
 
 @synthesize delegate;
 @synthesize logoImage = _logoImage;
+@synthesize catwareButton = _catwareButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -76,10 +77,20 @@
     // e.g. self.myOutlet = nil;
 }
 
+- (IBAction)catwareButtonPressed {
+     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://catware.co"]];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
 	return YES;
+}
+
+- (void)dealloc{
+    [_logoImage release];
+    [_catwareButton release];
+    [super dealloc];
 }
 
 @end
