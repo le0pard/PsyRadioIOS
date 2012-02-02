@@ -529,7 +529,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = (
 					armv6,
-					"$(ARCHS_STANDARD_32_BIT)",
+					armv7,
 				);
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Oleksii Vasyliev";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Oleksii Vasyliev";
