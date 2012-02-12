@@ -12,16 +12,17 @@
 
 @interface AboutViewController : UIViewController {
     id <AboutViewControllerDelegate> delegate;
-    UIImageView *logoImage;
+    UIButton *logoButton;
     UIButton *catwareButton;
 }
 
 @property (assign) id <AboutViewControllerDelegate> delegate;
-@property (nonatomic, retain) IBOutlet UIImageView *logoImage;
+@property (nonatomic, retain) IBOutlet UIButton *logoButton;
 @property (nonatomic, retain) IBOutlet UIButton *catwareButton;
 
 - (IBAction)done;
 - (IBAction)catwareButtonPressed;
+- (IBAction)psyButtonPressed;
 
 @end
 

@@ -17,7 +17,7 @@
 @synthesize volumeSlider = _volumeSlider;
 @synthesize qualitySelector = _qualitySelector;
 @synthesize trackTitle = _trackTitle;
-@synthesize logoImage = _logoImage;
+@synthesize logoButton = _logoButton;
 @synthesize plusSound = _plusSound;
 @synthesize minusSound = _minusSound;
 
@@ -185,17 +185,17 @@
     switch (toInterfaceOrientation) {
         case UIInterfaceOrientationLandscapeLeft:
         case UIInterfaceOrientationLandscapeRight:
-            self.logoImage.hidden = YES;
+            self.logoButton.hidden = YES;
             break;
         default:
-            self.logoImage.hidden = NO;
+            self.logoButton.hidden = NO;
             int size = 150;
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
                 size = 150;
             } else {
                 size = 300;
             }
-            self.logoImage.frame =  CGRectMake(([self view].bounds.size.width / 2) - (size / 2), 10, size, size);
+            self.logoButton.frame =  CGRectMake(([self view].bounds.size.width / 2) - (size / 2), 10, size, size);
             break;
     }
 }
@@ -311,6 +311,10 @@
 	[controller release];
 }
 
+-(IBAction)gotoPsySite {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://psyradio.com.ua"]];
+}
+
 //Make sure we can recieve remote control events
 - (BOOL)canBecomeFirstResponder {
     return YES;
@@ -340,7 +344,7 @@
     [_volumeSlider release];
     [_qualitySelector release];
     [_trackTitle release];
-    [_logoImage release];
+    [_logoButton release];
     [_plusSound release];
     [_minusSound release];
     [super dealloc];

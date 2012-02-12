@@ -12,7 +12,7 @@
 @implementation AboutViewController
 
 @synthesize delegate;
-@synthesize logoImage = _logoImage;
+@synthesize logoButton = _logoButton;
 @synthesize catwareButton = _catwareButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -41,12 +41,12 @@
         case UIInterfaceOrientationLandscapeLeft:
         case UIInterfaceOrientationLandscapeRight:
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                self.logoImage.hidden = YES;
+                self.logoButton.hidden = YES;
             }
             break;
         default:
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                self.logoImage.hidden = NO;
+                self.logoButton.hidden = NO;
             }
             break;
     }
@@ -81,6 +81,10 @@
      [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://catware.co"]];
 }
 
+- (IBAction)psyButtonPressed {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://psyradio.com.ua"]];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -88,8 +92,8 @@
 }
 
 - (void)dealloc{
-    [_logoImage release];
     [_catwareButton release];
+    [_logoButton release];
     [super dealloc];
 }
 
