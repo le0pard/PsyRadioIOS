@@ -311,10 +311,6 @@
 	[controller release];
 }
 
--(IBAction)gotoPsySite {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://psyradio.com.ua"]];
-}
-
 //Make sure we can recieve remote control events
 - (BOOL)canBecomeFirstResponder {
     return YES;

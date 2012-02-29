@@ -148,6 +148,7 @@
 						<string key="NSFrame">{{20, 941}, {728, 44}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:273</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -260,36 +261,26 @@
 						<reference key="IBUIFontDescription" ref="469844503"/>
 						<reference key="IBUIFont" ref="962686190"/>
 					</object>
-					<object class="IBUIButton" id="702846103">
+					<object class="IBUIImageView" id="380869719">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">293</int>
-						<string key="NSFrame">{{234, 20}, {300, 300}}</string>
+						<string key="NSFrame">{{234, 40}, {300, 300}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="345871397"/>
-						<string key="NSReuseIdentifierKey">_NS:241</string>
-						<bool key="IBUIOpaque">NO</bool>
+						<string key="NSReuseIdentifierKey">_NS:569</string>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
-						<reference key="IBUIHighlightedTitleColor" ref="430306281"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="897938483"/>
-						<object class="NSCustomResource" key="IBUINormalImage">
+						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">logo@2x.png</string>
 						</object>
-						<reference key="IBUIFontDescription" ref="469844503"/>
-						<reference key="IBUIFont" ref="962686190"/>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {768, 1004}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="702846103"/>
+				<reference key="NSNextKeyView" ref="380869719"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -365,9 +356,9 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">logoButton</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="702846103"/>
+						<reference key="destination" ref="380869719"/>
 					</object>
-					<int key="connectionID">33</int>
+					<int key="connectionID">36</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -423,15 +414,6 @@
 					</object>
 					<int key="connectionID">31</int>
 				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">gotoPsySite</string>
-						<reference key="source" ref="702846103"/>
-						<reference key="destination" ref="841351856"/>
-						<int key="IBEventType">7</int>
-					</object>
-					<int key="connectionID">34</int>
-				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -464,7 +446,7 @@
 							<reference ref="545647466"/>
 							<reference ref="185138918"/>
 							<reference ref="345871397"/>
-							<reference ref="702846103"/>
+							<reference ref="380869719"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -509,8 +491,8 @@
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">32</int>
-						<reference key="object" ref="702846103"/>
+						<int key="objectID">35</int>
+						<reference key="object" ref="380869719"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 				</array>
@@ -527,7 +509,7 @@
 				<string key="25.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="26.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="27.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="32.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="35.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -536,7 +518,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">34</int>
+			<int key="maxID">36</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -545,7 +527,6 @@
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="changeVolume:">UIButton</string>
-						<string key="gotoPsySite">id</string>
 						<string key="qualityChanged">id</string>
 						<string key="radioButtonPressed">id</string>
 						<string key="showAboutInfo">id</string>
@@ -555,10 +536,6 @@
 						<object class="IBActionInfo" key="changeVolume:">
 							<string key="name">changeVolume:</string>
 							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBActionInfo" key="gotoPsySite">
-							<string key="name">gotoPsySite</string>
-							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="qualityChanged">
 							<string key="name">qualityChanged</string>
@@ -578,7 +555,7 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="logoButton">UIButton</string>
+						<string key="logoButton">UIImageView</string>
 						<string key="minusSound">UIButton</string>
 						<string key="plusSound">UIButton</string>
 						<string key="qualitySelector">UISegmentedControl</string>
@@ -589,7 +566,7 @@
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="logoButton">
 							<string key="name">logoButton</string>
-							<string key="candidateClassName">UIButton</string>
+							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="minusSound">
 							<string key="name">minusSound</string>

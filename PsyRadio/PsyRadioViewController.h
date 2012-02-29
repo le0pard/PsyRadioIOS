@@ -21,7 +21,7 @@
     UISlider *volumeSlider;
     UISegmentedControl *qualitySelector;
     UILabel *trackTitle;
-    UIButton *logoButton;
+    UIImageView *logoButton;
     UIButton *plusSound;
     UIButton *minusSound;
 }
@@ -31,7 +31,7 @@
 @property (nonatomic, retain) IBOutlet UISlider *volumeSlider;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *qualitySelector;
 @property (nonatomic, retain) IBOutlet UILabel *trackTitle;
-@property (nonatomic, retain) IBOutlet UIButton *logoButton;
+@property (nonatomic, retain) IBOutlet UIImageView *logoButton;
 @property (nonatomic, retain) IBOutlet UIButton *plusSound;
 @property (nonatomic, retain) IBOutlet UIButton *minusSound;
 
@@ -51,6 +51,5 @@
 -(IBAction)changeVolume:(UIButton*)sender;
 
 -(IBAction)showAboutInfo;
--(IBAction)gotoPsySite;
 
 @end
