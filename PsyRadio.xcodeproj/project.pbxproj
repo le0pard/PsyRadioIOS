@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B3344A0B14D0842800427C12 /* catware_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B3344A0914D0842800427C12 /* catware_logo.png */; };
 		B3344A0C14D0842800427C12 /* catware_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3344A0A14D0842800427C12 /* catware_logo@2x.png */; };
+		B3642D071825550100BFDB3B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3642D061825550100BFDB3B /* Images.xcassets */; };
 		B38C7A6414DACC12001B7D33 /* thumb-IPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B38C7A6314DACC12001B7D33 /* thumb-IPad.png */; };
 		B3A8757814CAF80600ADB447 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A8757614CAF80600ADB447 /* icon.png */; };
 		B3A8758014CAF86500ADB447 /* icon_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A8757F14CAF86500ADB447 /* icon_ipad.png */; };
@@ -78,6 +79,7 @@
 /* Begin PBXFileReference section */
 		B3344A0914D0842800427C12 /* catware_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catware_logo.png; sourceTree = "<group>"; };
 		B3344A0A14D0842800427C12 /* catware_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catware_logo@2x.png"; sourceTree = "<group>"; };
+		B3642D061825550100BFDB3B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B38C7A6314DACC12001B7D33 /* thumb-IPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb-IPad.png"; sourceTree = "<group>"; };
 		B3A8757614CAF80600ADB447 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		B3A8757F14CAF86500ADB447 /* icon_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_ipad.png; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				B3FF77A114CB3066008EF711 /* AboutViewController.m */,
 				B3FF77A214CB3066008EF711 /* AboutViewController_IPad.xib */,
 				B3FF77AC14CB3151008EF711 /* AboutViewController_IPhone.xib */,
+				B3642D061825550100BFDB3B /* Images.xcassets */,
 			);
 			path = PsyRadio;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FDA14314BF09AA0011E709 /* InfoPlist.strings in Resources */,
+				B3642D071825550100BFDB3B /* Images.xcassets in Resources */,
 				B3FDA14F14BF09AA0011E709 /* PsyRadioViewController_iPhone.xib in Resources */,
 				B3FDA15214BF09AA0011E709 /* PsyRadioViewController_iPad.xib in Resources */,
 				B3DC54C814C195880051D342 /* loadingbutton.png in Resources */,
@@ -533,8 +537,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Oleksii Vasyliev";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Oleksii Vasyliev";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -560,16 +564,18 @@
 		B35C029B14D9AA2A00C01A96 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Oleksii Vasyliev";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Oleksii Vasyliev";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PsyRadio/PsyRadio-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "PsyRadio/PsyRadio-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D3560BDC-834A-4F66-B42F-AD5AC3A92DE9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3560BDC-834A-4F66-B42F-AD5AC3A92DE9";
+				PROVISIONING_PROFILE = "750C1625-2C9C-4361-AFDD-26ACB8C9D9DE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "750C1625-2C9C-4361-AFDD-26ACB8C9D9DE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Distribution;
@@ -602,7 +608,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
@@ -640,8 +646,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -665,6 +671,8 @@
 		B3FDA16B14BF09AA0011E709 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -673,8 +681,8 @@
 				INFOPLIST_FILE = "PsyRadio/PsyRadio-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "83D4EF56-1463-4B2E-8559-755191A99C50";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "83D4EF56-1463-4B2E-8559-755191A99C50";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -682,16 +690,18 @@
 		B3FDA16C14BF09AA0011E709 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PsyRadio/PsyRadio-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "PsyRadio/PsyRadio-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "750C1625-2C9C-4361-AFDD-26ACB8C9D9DE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "750C1625-2C9C-4361-AFDD-26ACB8C9D9DE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
