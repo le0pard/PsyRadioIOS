@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>92318215-4B48-436E-B14C-8CBD2C2DE4A7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PsyRadio</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DC4C5C66-1F57-4189-AF2D-3B0B7B364A84</key>
+		<string>ssh://github.com/le0pard/PsyRadioIOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PsyRadio.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DC4C5C66-1F57-4189-AF2D-3B0B7B364A84</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/le0pard/PsyRadioIOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DC4C5C66-1F57-4189-AF2D-3B0B7B364A84</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DC4C5C66-1F57-4189-AF2D-3B0B7B364A84</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PsyRadio</string>
+		</dict>
+	</array>
+</dict>
+</plist>

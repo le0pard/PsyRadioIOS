@@ -23,7 +23,7 @@
 
 
 - (void)aboutViewControllerDidFinish:(AboutViewController *)controller {
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
     // rotation
     [self logoInOrientation:self.interfaceOrientation];
 }
@@ -205,13 +205,13 @@
     [self logoInOrientation:self.interfaceOrientation];
     //background
     [[self view] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_sand.png"]]];
-    self.trackTitle.textAlignment = UITextAlignmentCenter;
+    self.trackTitle.textAlignment = NSTextAlignmentCenter;
     
     //slider
     UIImage *minImage = NULL;
     UIImage *maxImage = NULL;
     UIImage *thumbImage = NULL;
-    if ([[UIImage class] respondsToSelector:@selector(resizableImageWithCapInsets)]) {
+    if ([[UIImage class] respondsToSelector:@selector(resizableImageWithCapInsets:)]) {
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             minImage = [[UIImage imageNamed:@"slider_minimum.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
             maxImage = [[UIImage imageNamed:@"slider_maximum.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
@@ -306,7 +306,7 @@
 	controller.delegate = self;
 	
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-	[self presentModalViewController:controller animated:YES];
+	[self presentViewController:controller animated:YES completion:nil];
 	
 	[controller release];
 }
