@@ -100,7 +100,7 @@
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
                 [self.radioButton setImage:[UIImage imageNamed:@"playbutton.png"] forState:0];
             } else {
-                [self.radioButton setImage:[UIImage imageNamed:@"playbutton@2x.png"] forState:0];
+                [self.radioButton setImage:[UIImage imageNamed:@"playbutton-IPad.png"] forState:0];
             }
             break;
         // loading
@@ -108,7 +108,7 @@
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
                 [self.radioButton setImage:[UIImage imageNamed:@"loadingbutton.png"] forState:0];
             } else {
-                [self.radioButton setImage:[UIImage imageNamed:@"loadingbutton@2x.png"] forState:0];
+                [self.radioButton setImage:[UIImage imageNamed:@"loadingbutton-IPad.png"] forState:0];
             }
             [self spinButton];
             break; 
@@ -117,7 +117,7 @@
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
                 [self.radioButton setImage:[UIImage imageNamed:@"pausebutton.png"] forState:0];
             } else {
-                [self.radioButton setImage:[UIImage imageNamed:@"pausebutton@2x.png"] forState:0];
+                [self.radioButton setImage:[UIImage imageNamed:@"pausebutton-IPad.png"] forState:0];
             }
             break;
         default:
