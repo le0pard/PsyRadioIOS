@@ -64,8 +64,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.frame = [UIScreen mainScreen].bounds;
-    [self.view setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
     // rotation
     [self logoInOrientation:self.interfaceOrientation];
     // bg

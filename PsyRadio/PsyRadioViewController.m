@@ -243,10 +243,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.view.frame = [UIScreen mainScreen].bounds;
-    [self.view setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
     // radio
-    self.radio = [[Radio alloc] init];
+    self.radio = [Radio new];
     //design
     [self setupIntrface];
 }
